@@ -7,6 +7,6 @@ module.exports = {
         "PAYPAL_CLIENT_ID": "YOUR_PAYPAL_CLIENT_ID",
         "CLOUD_UPDATE_PRESET": "ml_default",
         "CLOUD_NAME": "db5gm6hgs",
-        "CLOUD_API": "https://api.cloudinary.com/v1_1/db5gm6hgs/image/upload/images-produtos"
+        "CLOUD_API": "https://api.cloudnary.com/v1_1/db5gm6hgs/image/upload"
     }
 }
