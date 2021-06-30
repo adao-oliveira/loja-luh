@@ -51,33 +51,37 @@ const Registrar = () => {
         <h1>Registre-se</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
+            <label htmlFor="name">Nome</label>
             <div class="input-field">
               <input type="text" id="name"
-                name="name" value={name} onChange={handleChangeInput} placeholder="Nome" />
+                name="name" value={name} onChange={handleChangeInput} />
               <div class="underline"></div>
             </div>
           </div>
 
           <div className="form-group">
+            <label htmlFor="exampleInputEmail1">E-mail</label>
             <div class="input-field">
               <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp"
-                name="email" value={email} onChange={handleChangeInput} placeholder="E-mail" />
+                name="email" value={email} onChange={handleChangeInput} />
               <div class="underline"></div>
             </div>
           </div>
 
           <div className="form-group">
+            <label htmlFor="exampleInputPassword1">Senha</label>
             <div class="input-field">
               <input type="password" id="exampleInputPassword1"
-                name="password" value={password} onChange={handleChangeInput} placeholder="Senha" />
+                name="password" value={password} onChange={handleChangeInput} />
               <div class="underline"></div>
             </div>
           </div>
 
           <div className="form-group">
+            <label htmlFor="exampleInputPassword2">Confirmar Senha</label>
             <div class="input-field">
               <input type="password" id="exampleInputPassword2"
-                name="cf_password" value={cf_password} onChange={handleChangeInput} placeholder="Confirme a Senha" />
+                name="cf_password" value={cf_password} onChange={handleChangeInput} />
               <div class="underline"></div>
             </div>
           </div>
@@ -87,7 +91,7 @@ const Registrar = () => {
           <p className="my-2">
             Já tem uma conta? <Link href="/login"><a style={{ color: 'crimson' }}>Fazer login</a></Link>
           </p>
-          
+
         </form>
       </main>
     </div>
