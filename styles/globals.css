@@ -31,3 +31,6 @@ img{
 
 /* ----------- Products Manager ------------- */
 @import url("./products_manager.css");
+
+/* ----------- Login ------------- */
+@import url("./login.css");
