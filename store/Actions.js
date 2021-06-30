@@ -9,9 +9,6 @@ export const ACTIONS = {
 }
 
 export const addToCart = (product, carrinho) => {
-    if(product.inStock === 0)
-    return ({ type: 'NOTIFY', payload: {error: 'Este produto está fora de estoque'} }) 
-
     const check = carrinho.every(item => {
         return item._id !== product._id
     })

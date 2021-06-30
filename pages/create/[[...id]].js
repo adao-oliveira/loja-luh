@@ -10,13 +10,12 @@ const ProductsManager = () => {
         product_id: "",
         title: '',
         price: 0,
-        inStock: 0,
         description: '',
         content: '',
         category: ''
     }
     const [product, setProduct] = useState(initialState)
-    const { product_id, title, price, inStock, description, content, category } = product
+    const { product_id, title, price, description, content, category } = product
 
     const [images, setImages] = useState([])
 
@@ -88,7 +87,7 @@ const ProductsManager = () => {
         if (auth.user.role !== 'admin')
             return dispatch({ type: 'NOTIFY', payload: { error: 'A autenticação não é válida' } })
 
-        if (!product_id || !title || !price || !inStock || !description || !content || category === 'all' || images.length === 0)
+        if (!product_id || !title || !price || !description || !content || category === 'all' || images.length === 0)
             return dispatch({ type: 'NOTIFY', payload: { error: 'Por favor, adicione todos os campos' } })
 
 
@@ -119,15 +118,12 @@ const ProductsManager = () => {
             </Head>
             <form className="row" onSubmit={handleSubmit}>
                 <div className="col-md-6">
-
                     <input type="text" name="product_id" value={product_id}
                         placeholder="ID Produto" className="d-block my-4 w-100 p-2"
                         onChange={handleChangeInput} />
-
                     <input type="text" name="title" value={title}
                         placeholder="Title" className="d-block my-4 w-100 p-2"
                         onChange={handleChangeInput} />
-
                     <div className="row">
                         <div className="col-sm-6">
                             <label htmlFor="price">Preço</label>
@@ -135,23 +131,13 @@ const ProductsManager = () => {
                                 placeholder="Preço" className="d-block w-100 p-2"
                                 onChange={handleChangeInput} />
                         </div>
-
-                        <div className="col-sm-6">
-                            <label htmlFor="inStock">Em estoque</label>
-                            <input type="number" name="inStock" value={inStock}
-                                placeholder="Em estoque" className="d-block w-100 p-2"
-                                onChange={handleChangeInput} />
-                        </div>
                     </div>
-
                     <textarea name="description" id="description" cols="30" rows="4"
                         placeholder="Resumo" onChange={handleChangeInput}
                         className="d-block my-4 w-100 p-2" value={description} />
-
                     <textarea name="content" id="content" cols="30" rows="6"
                         placeholder="Descrição" onChange={handleChangeInput}
                         className="d-block my-4 w-100 p-2" value={content} />
-
                     <div className="input-group-prepend px-0 my-2">
                         <select name="category" id="category" value={category}
                             onChange={handleChangeInput} className="custom-select text-capitalize">
@@ -165,13 +151,10 @@ const ProductsManager = () => {
                             }
                         </select>
                     </div>
-
                     <button type="submit" className="btn btn-danger my-2 px-4">
                         {onEdit ? 'Atualizar' : 'Criar'}
                     </button>
-
                 </div>
-
                 <div className="col-md-6 my-4">
                     <div className="input-group mb-3">
                         <div className="input-group-prepend">
@@ -181,9 +164,7 @@ const ProductsManager = () => {
                             <input type="file" className="custom-file-input"
                                 onChange={handleUploadInput} multiple accept="image/*" />
                         </div>
-
                     </div>
-
                     <div className="row img-up mx-0">
                         {
                             images.map((img, index) => (
@@ -196,14 +177,8 @@ const ProductsManager = () => {
                             ))
                         }
                     </div>
-
-
                 </div>
-
-
             </form>
-
-
         </div>
     )
 }

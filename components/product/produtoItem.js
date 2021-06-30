@@ -16,7 +16,6 @@ const produtoItem = ({product, handleCheck}) => {
                 </Link>
                 <button className="btn btn-danger"
                 style={{marginLeft: '5px', flex: 1}}
-                disabled={product.inStock === 0 ? true : false} 
                 onClick={() => dispatch(addToCart(product, carrinho))} >
                     Comprar
                 </button>
@@ -61,15 +60,6 @@ const produtoItem = ({product, handleCheck}) => {
                 <h5 className="card-title text-capitalize" title={product.title}>
                     {product.title}
                 </h5>
-
-                <div className="row justify-content-between mx-0">
-                    <h6 className="text-danger">R${product.price}</h6>
-                    {
-                        product.inStock > 0
-                        ? <h6 className="text-danger">Em estoque: {product.inStock}</h6>
-                        : <h6 className="text-danger">Fora de estoque</h6>
-                    }
-                </div>
 
                 <p className="card-text" title={product.description}>
                     {product.description}

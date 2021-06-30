@@ -43,7 +43,7 @@ const createOrder = async (req, res) => {
         })
 
         carrinho.filter(item => {
-            return sold(item._id, item.quantity, item.inStock, item.sold)
+            return sold(item._id, item.quantity, item.sold)
         })
 
         await newOrder.save()
@@ -56,11 +56,4 @@ const createOrder = async (req, res) => {
     } catch (err) {
         return res.status(500).json({err: err.message})
     }
-}
-
-const sold = async (id, quantity, oldInStock, oldSold) => {
-    await Products.findOneAndUpdate({_id: id}, {
-        inStock: oldInStock - quantity,
-        sold: quantity + oldSold
-    })
 }

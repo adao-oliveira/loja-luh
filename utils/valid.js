@@ -3,10 +3,10 @@ const valid = (name, email, password, cf_password) => {
     return 'Please add all fields.'
 
     if(!validateEmail(email))
-    return 'Invalid emails.'
+    return 'E-mail inválido'
 
     if(password.length < 6)
-    return 'Password must be at least 6 characters.'
+    return 'A senha deve ter pelo menos 6 caracteres'
 
     if(password !== cf_password)
     return 'Confirm password did not match.'
