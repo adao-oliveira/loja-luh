@@ -47,49 +47,47 @@ const Registrar = () => {
         <title>Registrar</title>
       </Head>
 
-      <main className="container mt-48 mb-32" style={{ maxWidth: '600px' }}>
+      <form className="container card mt-48 mb-32" style={{ maxWidth: '600px' }} onSubmit={handleSubmit}>
         <h1>Registre-se</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <div className="input-field">
-              <input type="text" id="name"
-                name="name" value={name} onChange={handleChangeInput} placeholder="Nome" />
-              <div className="underline"></div>
-            </div>
+        <div className="form-group">
+          <div className="input-field">
+            <input type="text" id="name"
+              name="name" value={name} onChange={handleChangeInput} placeholder="Nome" />
+            <div className="underline"></div>
           </div>
+        </div>
 
-          <div className="form-group">
-            <div class="input-field">
-              <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp"
-                name="email" value={email} onChange={handleChangeInput} placeholder="E-mail" />
-              <div className="underline"></div>
-            </div>
+        <div className="form-group">
+          <div class="input-field">
+            <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp"
+              name="email" value={email} onChange={handleChangeInput} placeholder="E-mail" />
+            <div className="underline"></div>
           </div>
+        </div>
 
-          <div className="form-group">
-            <div className="input-field">
-              <input type="password" id="exampleInputPassword1"
-                name="password" value={password} onChange={handleChangeInput} placeholder="Senha" />
-              <div className="underline"></div>
-            </div>
+        <div className="form-group">
+          <div className="input-field">
+            <input type="password" id="exampleInputPassword1"
+              name="password" value={password} onChange={handleChangeInput} placeholder="Senha" />
+            <div className="underline"></div>
           </div>
+        </div>
 
-          <div className="form-group">
-            <div className="input-field">
-              <input type="password" id="exampleInputPassword2"
-                name="cf_password" value={cf_password} onChange={handleChangeInput} placeholder="Confirme a Senha" />
-              <div className="underline"></div>
-            </div>
+        <div className="form-group">
+          <div className="input-field">
+            <input type="password" id="exampleInputPassword2"
+              name="cf_password" value={cf_password} onChange={handleChangeInput} placeholder="Confirme a Senha" />
+            <div className="underline"></div>
           </div>
+        </div>
 
-          <button type="submit" className="btn btn-danger w-100">Registrar</button>
+        <button type="submit" className="btn btn-danger w-100">Registrar</button>
 
-          <p className="my-2">
-            Já tem uma conta? <Link href="/login"><a style={{ color: 'crimson' }}>Fazer login</a></Link>
-          </p>
-          
-        </form>
-      </main>
+        <p className="my-2">
+          Já tem uma conta? <Link href="/login"><a style={{ color: 'crimson' }}>Fazer login</a></Link>
+        </p>
+
+      </form>
     </div>
   )
 }
