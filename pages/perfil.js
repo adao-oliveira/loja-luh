@@ -108,22 +108,22 @@ const Perfil = () => {
                             </span>
                         </div>
 
-                        <div className="col-md-6">
+                        <div className="col-md-6 my-2">
                             <label htmlFor="name">Nome</label>
-                            <input type="text" name="name" value={name} className="d-block my-4 w-100 p-2 input-group-text text-left bg-white" onChange={handleChange} />
+                            <input type="text" name="name" value={name} className="form-control" onChange={handleChange} />
                         </div>
 
-                        <div className="col-md-6">
+                        <div className="col-md-6 my-2">
                             <label htmlFor="email">E-mail</label>
                             <input type="text" name="email" defaultValue={auth.user.email} className="form-control" disabled={true} />
                         </div>
 
-                        <div className="col-md-6">
+                        <div className="col-md-6 my-2">
                             <label htmlFor="password">Nova Senha</label>
                             <input type="password" name="password" value={password} className="form-control" onChange={handleChange} />
                         </div>
 
-                        <div className="col-md-6">
+                        <div className="col-md-6 my-2">
                             <label htmlFor="cf_password">Confirmar nova Senha</label>
                             <input type="password" name="cf_password" value={cf_password} className="form-control" onChange={handleChange} />
                         </div>
