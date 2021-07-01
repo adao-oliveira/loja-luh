@@ -177,7 +177,7 @@ const ProductsManager = () => {
                     </div>
                 </div>
                 <div className="grid justify-items-center">
-                    <button type="submit" className="btn btn-danger my-2 px-4 w-25">
+                    <button type="submit" className="btn btn-danger my-2 px-4 w-50">
                         {onEdit ? 'Atualizar' : 'Criar'}
                     </button>
                 </div>

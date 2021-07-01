@@ -56,7 +56,7 @@ const Login = () => {
       </Head>
 
       <main class="container mt-48 mb-32" style={{ maxWidth: '600px' }}>
-        <h1>Login</h1>
+        <h1 className="font-light">Login</h1>
         <form onSubmit={handleSubmit}>
           <div class="input-field">
             <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp"

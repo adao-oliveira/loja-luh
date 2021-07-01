@@ -48,7 +48,7 @@ const Registrar = () => {
       </Head>
 
       <form className="container mx-auto my-4 mt-48" style={{ maxWidth: '600px' }} onSubmit={handleSubmit}>
-        <h1 className="mb-4">Registre-se</h1>
+        <h1 className="mb-4 font-light">Registre-se</h1>
         <div className="form-group input-field">
           <input type="text" id="name"
             name="name" value={name} onChange={handleChangeInput} placeholder="Nome" />

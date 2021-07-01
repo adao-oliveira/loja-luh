@@ -29,12 +29,9 @@ const Filter = ({ state }) => {
 
     return (
         <div className="input-group mt-48">
-            <div className="input-group-prepend col-md-2 px-0 mt-2">
-                <select className="custom-select text-capitalize"
-                    value={category} onChange={handleCategory}>
-
+            <div className="input-group-prepend col-md-2 px-4 mt-2">
+                <select className="custom-select text-capitalize" value={category} onChange={handleCategory}>
                     <option value="all">Todos os Produtos</option>
-
                     {
                         categories.map(item => (
                             <option key={item._id} value={item._id}>{item.name}</option>
@@ -42,26 +39,18 @@ const Filter = ({ state }) => {
                     }
                 </select>
             </div>
-
-            <div className="input-group-prepend col-md-2 px-0 mt-2">
-                <select className="custom-select text-capitalize"
-                    value={sort} onChange={handleSort}>
-
+            <div className="input-group-prepend col-md-2 px-4 mt-2">
+                <select className="custom-select text-capitalize" value={sort} onChange={handleSort}>
                     <option value="-createdAt">Mais recente</option>
                     <option value="oldest">Mais antigo</option>
                     <option value="-sold">Melhores vendas</option>
                     <option value="-price">Preço: Alto</option>
                     <option value="price">Preço: Baixo</option>
-
                 </select>
             </div>
-
-            <form autoComplete="off" className="mt-2 col-md-8 px-0">
-                <input type="text" className="form-control" list="title_product"
-                    value={search.toLowerCase()} onChange={e => setSearch(e.target.value)} placeholder="Pesquisar" />
+            <form autoComplete="off" className="mt-2 col-md-8 px-4">
+                <input type="text" className="form-control" list="title_product" value={search.toLowerCase()} onChange={e => setSearch(e.target.value)} placeholder="Pesquisar" />
             </form>
-
-
         </div>
     )
 }
