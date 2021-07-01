@@ -20,7 +20,7 @@ const ProductsManager = () => {
     const [images, setImages] = useState([])
 
     const { state, dispatch } = useContext(DataContext)
-    const { categories, auth } = state
+    const { categorias, auth } = state
 
     const router = useRouter()
     const { id } = router.query
@@ -139,7 +139,7 @@ const ProductsManager = () => {
                             onChange={handleChangeInput} className="custom-select text-capitalize">
                             <option value="all">Todos os produtos</option>
                             {
-                                categories.map(item => (
+                                categorias.map(item => (
                                     <option key={item._id} value={item._id}>
                                         {item.name}
                                     </option>

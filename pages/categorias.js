@@ -4,11 +4,11 @@ import {DataContext} from '../store/GlobalState'
 import {updateItem} from '../store/Actions'
 import { postData, putData } from "../utils/fetchData";
 
-const Categories = () => {
+const Categorias = () => {
     const [name, setName] = useState('')
 
     const {state, dispatch} = useContext(DataContext)
-    const {categories, auth} = state
+    const {categorias, auth} = state
     
     const [id, setId] = useState('')
 
@@ -22,14 +22,14 @@ const Categories = () => {
 
         let res;
         if(id){
-            res = await putData(`categories/${id}`, {name}, auth.token)
+            res = await putData(`categorias/${id}`, {name}, auth.token)
             if(res.err) return dispatch({type: 'NOTIFY', payload: {error: res.err}})
-            dispatch(updateItem(categories, id, res.category, 'ADD_CATEGORIES'))
+            dispatch(updateItem(categorias, id, res.category, 'ADD_CATEGORIAS'))
 
         }else{
-            res = await postData('categories', {name}, auth.token)
+            res = await postData('categorias', {name}, auth.token)
             if(res.err) return dispatch({type: 'NOTIFY', payload: {error: res.err}})
-            dispatch({type: "ADD_CATEGORIES", payload: [...categories, res.newCategory]})
+            dispatch({type: "ADD_CATEGORIAS", payload: [...categorias, res.newCategory]})
         }
         setName('')
         setId('')
@@ -47,19 +47,19 @@ const Categories = () => {
                 <title>Categorias</title>
             </Head>
 
-            <div className="input-group mb-3">
+            <div className="input-group mb-3 mt-16">
                 <input type="text" className="form-control"
-                placeholder="Add a new category" value={name}
+                placeholder="Adicionar uma nova categoria" value={name}
                 onChange={e => setName(e.target.value)} />
 
-                <button className="btn btn-secondary ml-1"
+                <button className="btn btn-danger ml-1"
                 onClick={createCategory}>
-                    {id ? "Update": "Create"}
+                    {id ? "Atualizar": "Criar"}
                 </button>
             </div>
 
             {
-                categories.map(catogory => (
+                categorias.map(catogory => (
                     <div key={catogory._id} className="card my-2 text-capitalize">
                         <div className="card-body d-flex justify-content-between">
                             {catogory.name}
@@ -73,8 +73,8 @@ const Categories = () => {
                                 onClick={() => dispatch({
                                     type: 'ADD_MODAL',
                                     payload: [{ 
-                                        data: categories, id: catogory._id, 
-                                        title: catogory.name, type: 'ADD_CATEGORIES' 
+                                        data: categorias, id: catogory._id, 
+                                        title: catogory.name, type: 'ADD_CATEGORIAS' 
                                     }]
                                 })} ></i>
                             </div>
@@ -88,4 +88,4 @@ const Categories = () => {
     )
 }
 
-export default Categories
+export default Categorias

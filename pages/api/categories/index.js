@@ -1,5 +1,5 @@
 import connectDB from '../../../utils/connectDB'
-import Categories from '../../../models/categoriesModel'
+import Categorias from '../../../models/categoriasModel'
 import auth from '../../../middleware/auth'
 
 connectDB()
@@ -10,7 +10,7 @@ export default async (req, res) => {
             await createCategory(req, res)
             break;
         case "GET":
-            await getCategories(req, res)
+            await getCategorias(req, res)
             break;
     }
 }
@@ -24,7 +24,7 @@ const createCategory = async (req, res) => {
         const { name } = req.body
         if(!name) return res.status(400).json({err: "O nome não pode ficar em branco"})
 
-        const newCategory = new Categories({name})
+        const newCategory = new Categorias({name})
 
         await newCategory.save()
         res.json({
@@ -37,11 +37,11 @@ const createCategory = async (req, res) => {
     }
 }
 
-const getCategories = async (req, res) => {
+const getCategorias = async (req, res) => {
     try {
-        const categories = await Categories.find()
+        const categorias = await Categorias.find()
 
-        res.json({categories})
+        res.json({categorias})
 
     } catch (err) {
         return res.status(500).json({err: err.message})
