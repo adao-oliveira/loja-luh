@@ -69,15 +69,6 @@ const Produtos = (props) => {
 
       <div className="products">
         {
-          products.length === 0
-            ? <h2>Nenhum produto</h2>
-
-            : products.map(product => (
-              <ProdutoItem key={product._id} product={product} handleCheck={handleCheck} />
-            ))
-        }
-
-        {
           auth.user && auth.user.role === 'admin' &&
           <div className="delete_all btn btn-danger mt-16" style={{ marginBottom: '-10px', marginLeft: '20px' }}>
             <input type="checkbox" checked={isCheck} onChange={handleCheckALL} style={{ width: '25px', height: '25px', transform: 'translateY(8px)' }} />
@@ -86,7 +77,15 @@ const Produtos = (props) => {
             </button>
           </div>
         }
-        
+
+        {
+          products.length === 0
+            ? <h2>Nenhum produto</h2>
+
+            : products.map(product => (
+              <ProdutoItem key={product._id} product={product} handleCheck={handleCheck} />
+            ))
+        }
       </div>
 
       {
