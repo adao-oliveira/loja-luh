@@ -95,7 +95,7 @@ const Perfil = () => {
             </Head>
 
             <div className="mt-48">
-                <section className="container text-secondary my-3">
+                <section className="w-full max-w-lg container text-secondary my-3">
                     <div className="grid justify-items-center">
                         <div className="avatar">
                             <img src={avatar ? URL.createObjectURL(avatar) : auth.user.avatar}
@@ -135,8 +135,7 @@ const Perfil = () => {
                         </button>
                     </div>
 
-                    <h3 className="text-uppercase pl-4">Pedidos</h3>
-
+                    <h3 className="text-uppercase">Pedidos</h3>
                     <div className="my-3 table-responsive">
                         <table className="table-bordered table-hover w-100 text-uppercase"
                             style={{ minWidth: '600px', cursor: 'pointer' }}>
