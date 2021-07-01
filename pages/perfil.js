@@ -110,23 +110,22 @@ const Perfil = () => {
 
                         <div className="form-group">
                             <label htmlFor="name">Nome</label>
-                            <input type="text" name="name" value={name} className="form-control" onChange={handleChange} />
+                            <input type="text" name="name" value={name} className="d-block my-4 w-100 p-2 input-group-text text-left bg-white" onChange={handleChange} />
                         </div>
 
                         <div className="form-group">
                             <label htmlFor="email">E-mail</label>
-                            <input type="text" name="email" defaultValue={auth.user.email}
-                                className="form-control" disabled={true} />
+                            <input type="text" name="email" defaultValue={auth.user.email} className="d-block my-4 w-100 p-2 input-group-text text-left bg-white" disabled={true} />
                         </div>
 
                         <div className="form-group">
                             <label htmlFor="password">Nova Senha</label>
-                            <input type="password" name="password" value={password} className="form-control" onChange={handleChange} />
+                            <input type="password" name="password" value={password} className="d-block my-4 w-100 p-2 input-group-text text-left bg-white" onChange={handleChange} />
                         </div>
 
                         <div className="form-group">
                             <label htmlFor="cf_password">Confirmar nova Senha</label>
-                            <input type="password" name="cf_password" value={cf_password} className="form-control" onChange={handleChange} />
+                            <input type="password" name="cf_password" value={cf_password} className="d-block my-4 w-100 p-2 input-group-text text-left bg-white" onChange={handleChange} />
                         </div>
 
                         <button className="btn btn-danger px-4 mb-4" disabled={notify.loading}
