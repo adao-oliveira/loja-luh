@@ -47,7 +47,7 @@ const Categories = () => {
                 <title>Categorias</title>
             </Head>
 
-            <div className="input-group mt-48 mb-32">
+            <div className="input-group mt-48">
                 <input type="text" className="form-control" placeholder="Adicionar uma nova categoria" value={name} onChange={e => setName(e.target.value)} />
                 <button className="btn btn-danger w-25 ml-1" onClick={createCategory}>
                     {id ? "Atualizar" : "Criar"}
@@ -56,7 +56,7 @@ const Categories = () => {
 
             {
                 categories.map(catogory => (
-                    <div key={catogory._id} className="card my-2 text-capitalize">
+                    <div key={catogory._id} className="card my-2 text-capitalize mb-32">
                         <div className="card-body d-flex justify-content-between">
                             {catogory.name}
 
