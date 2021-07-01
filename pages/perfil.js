@@ -140,8 +140,8 @@ const Perfil = () => {
                     </div>
                 </div>
 
-                <div className="col-md-8 px-4">
-                    <h3 className="text-uppercase">Pedidos</h3>
+                <div className="col-md-8">
+                    <h3 className="text-uppercase px-4">Pedidos</h3>
 
                     <div className="my-3 table-responsive">
                         <table className="table-bordered table-hover w-100 text-uppercase"
