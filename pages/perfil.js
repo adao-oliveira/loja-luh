@@ -94,20 +94,20 @@ const Perfil = () => {
                 <title>Perfil</title>
             </Head>
 
-            <section className="container text-secondary my-3 mt-48">
-                <div className="col-md-4">
-                    <div className="avatar">
-                        <img src={avatar ? URL.createObjectURL(avatar) : auth.user.avatar}
-                            alt="avatar" />
-                        <span>
-                            <i className="fas fa-camera"></i>
-                            <p>Alterar</p>
-                            <input type="file" name="file" id="file_up"
-                                accept="image/*" onChange={changeAvatar} />
-                        </span>
-                    </div>
-
+            <div className="mt-48">
+                <section className="container text-secondary my-3">
                     <div className="grid justify-items-center">
+                        <div className="avatar">
+                            <img src={avatar ? URL.createObjectURL(avatar) : auth.user.avatar}
+                                alt="avatar" />
+                            <span>
+                                <i className="fas fa-camera"></i>
+                                <p>Alterar</p>
+                                <input type="file" name="file" id="file_up"
+                                    accept="image/*" onChange={changeAvatar} />
+                            </span>
+                        </div>
+
                         <div className="form-group">
                             <label htmlFor="name">Nome</label>
                             <input type="text" name="name" value={name} className="form-control" onChange={handleChange} />
@@ -134,59 +134,59 @@ const Perfil = () => {
                             Atualizar
                         </button>
                     </div>
-                </div>
 
-                <h3 className="text-uppercase pl-4">Pedidos</h3>
+                    <h3 className="text-uppercase pl-4">Pedidos</h3>
 
-                <div className="my-3 table-responsive">
-                    <table className="table-bordered table-hover w-100 text-uppercase"
-                        style={{ minWidth: '600px', cursor: 'pointer' }}>
-                        <thead className="bg-light font-weight-bold">
-                            <tr>
-                                <td className="p-2">id</td>
-                                <td className="p-2">data</td>
-                                <td className="p-2">total</td>
-                                <td className="p-2">entregue</td>
-                                <td className="p-2">pedido</td>
-                            </tr>
-                        </thead>
+                    <div className="my-3 table-responsive">
+                        <table className="table-bordered table-hover w-100 text-uppercase"
+                            style={{ minWidth: '600px', cursor: 'pointer' }}>
+                            <thead className="bg-light font-weight-bold">
+                                <tr>
+                                    <td className="p-2">id</td>
+                                    <td className="p-2">data</td>
+                                    <td className="p-2">total</td>
+                                    <td className="p-2">entregue</td>
+                                    <td className="p-2">pedido</td>
+                                </tr>
+                            </thead>
 
-                        <tbody>
-                            {
-                                orders.map(order => (
-                                    <tr key={order._id}>
-                                        <td className="p-2">
-                                            <Link href={`/order/${order._id}`}>
-                                                <a>{order._id}</a>
-                                            </Link>
+                            <tbody>
+                                {
+                                    orders.map(order => (
+                                        <tr key={order._id}>
+                                            <td className="p-2">
+                                                <Link href={`/order/${order._id}`}>
+                                                    <a>{order._id}</a>
+                                                </Link>
 
-                                        </td>
-                                        <td className="p-2">
-                                            {new Date(order.createdAt).toLocaleDateString()}
-                                        </td>
-                                        <td className="p-2">R${order.total}</td>
-                                        <td className="p-2">
-                                            {
-                                                order.delivered
-                                                    ? <i className="fas fa-check text-success"></i>
-                                                    : <i className="fas fa-times text-danger"></i>
-                                            }
-                                        </td>
-                                        <td className="p-2">
-                                            {
-                                                order.paid
-                                                    ? <i className="fas fa-check text-success"></i>
-                                                    : <i className="fas fa-times text-danger"></i>
-                                            }
-                                        </td>
-                                    </tr>
-                                ))
-                            }
-                        </tbody>
+                                            </td>
+                                            <td className="p-2">
+                                                {new Date(order.createdAt).toLocaleDateString()}
+                                            </td>
+                                            <td className="p-2">R${order.total}</td>
+                                            <td className="p-2">
+                                                {
+                                                    order.delivered
+                                                        ? <i className="fas fa-check text-success"></i>
+                                                        : <i className="fas fa-times text-danger"></i>
+                                                }
+                                            </td>
+                                            <td className="p-2">
+                                                {
+                                                    order.paid
+                                                        ? <i className="fas fa-check text-success"></i>
+                                                        : <i className="fas fa-times text-danger"></i>
+                                                }
+                                            </td>
+                                        </tr>
+                                    ))
+                                }
+                            </tbody>
 
-                    </table>
-                </div>
-            </section>
+                        </table>
+                    </div>
+                </section>
+            </div>
         </div>
     )
 }
