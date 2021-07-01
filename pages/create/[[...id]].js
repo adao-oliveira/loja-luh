@@ -57,8 +57,8 @@ const ProductsManager = () => {
             return dispatch({ type: 'NOTIFY', payload: { error: 'Arquivos não existem' } })
 
         files.forEach(file => {
-            if (file.size > 1024 * 1024)
-                return err = 'O maior tamanho de imagem é 1mb'
+            if (file.size > 1024 * 1024 * 5)
+                return err = 'O maior tamanho de imagem é 5mb'
 
             if (file.type !== 'image/jpeg' && file.type !== 'image/png')
                 return err = 'O formato da imagem está incorreto'
@@ -117,8 +117,8 @@ const ProductsManager = () => {
                 <title>Produtos</title>
             </Head>
             <form className="w-full max-w-lg container" onSubmit={handleSubmit}>
-                <div class="flex flex-wrap -mx-3">
-                    <div class="w-full md:w-1/2 px-3 md:mb-0">
+                <div class="flex flex-wrap -mx-3 -mb-8">
+                    <div class="w-full md:w-1/2 px-3 md:mb-0 -mb-8">
                         <input type="text" name="product_id" value={product_id} placeholder="ID Produto" className="d-block my-4 w-100 p-2 input-group-text text-left bg-white" onChange={handleChangeInput} />
                     </div>
                     <div class="w-full md:w-1/2 px-3">
@@ -126,15 +126,15 @@ const ProductsManager = () => {
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-3">
-                    <div class="w-full md:w-1/2 px-3 mb-0 md:mb-0">
+                    <div class="w-full md:w-1/2 px-3 md:mb-0 -mb-8">
                         <textarea name="description" id="description" cols="20" rows="3" placeholder="Resumo" onChange={handleChangeInput} className="d-block my-4 w-100 p-2 input-group-text bg-white text-left" value={description} />
                     </div>
-                    <div class="w-full md:w-1/2 px-3 mb-2 md:mb-0">
+                    <div class="w-full md:w-1/2 px-3 md:mb-0 -mb-2">
                         <textarea name="content" id="content" cols="20" rows="3" placeholder="Descrição" onChange={handleChangeInput} className="d-block my-4 w-100 p-2 input-group-text bg-white text-left" value={content} />
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-3">
-                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0 ml-auto">
+                    <div class="w-full md:w-1/2 px-3 mb-3 md:mb-0 ml-auto">
                         <select name="category" id="category" value={category}
                             onChange={handleChangeInput} className="custom-select text-capitalize">
                             <option value="all">Todos os produtos</option>
@@ -147,13 +147,13 @@ const ProductsManager = () => {
                             }
                         </select>
                     </div>
-                    <div class="w-full md:w-1/3 px-3 mr-auto">
+                    <div class="w-full md:w-1/2 px-3 md:mb-0 mr-auto -mb-2">
                         <input type="number" name="price" value={price} placeholder="Preço" className="d-block w-100 p-2 custom-select" onChange={handleChangeInput} />
                     </div>
                 </div>
                 <div className="grid justify-items-center">
                     <div className="col-md-6 my-4">
-                        <div className="input-group mb-3">
+                        <div className="input-group">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Upload</span>
                             </div>
