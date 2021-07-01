@@ -66,18 +66,19 @@ const Produtos = (props) => {
       </Head>
 
       <Filter state={state} />
-
-      <div className="products">
-        {
-          auth.user && auth.user.role === 'admin' &&
-          <div className="delete_all btn btn-danger mt-16" style={{ marginBottom: '-10px', marginLeft: '20px' }}>
-            <input type="checkbox" checked={isCheck} onChange={handleCheckALL} style={{ width: '25px', height: '25px', transform: 'translateY(8px)' }} />
+      {
+        auth.user && auth.user.role === 'admin' &&
+        <div className="grid justify-items-center mt-6 -mb-16">
+          <div className="delete_all btn btn-danger">
+            <input type="checkbox" checked={isCheck} onChange={handleCheckALL} style={{ width: '50px', height: '25px', transform: 'translateY(8px)' }} />
             <button className="btn btn-danger ml-2" data-toggle="modal" data-target="#exampleModal" onClick={handleDeleteAll}>
               Deletar tudo
             </button>
           </div>
-        }
+        </div>
+      }
 
+      <div className="products">
         {
           products.length === 0
             ? <h2>Nenhum produto</h2>

@@ -56,7 +56,7 @@ const Categories = () => {
 
             {
                 categories.map(catogory => (
-                    <div key={catogory._id} className="card my-2 text-capitalize mb-48">
+                    <div key={catogory._id} className="card my-2 text-capitalize">
                         <div className="card-body d-flex justify-content-between">
                             {catogory.name}
 
