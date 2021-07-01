@@ -128,14 +128,14 @@ const Perfil = () => {
                             <input type="password" name="cf_password" value={cf_password} className="form-control" onChange={handleChange} />
                         </div>
 
-                        <button className="btn btn-danger px-4 mt-4 mb-8" disabled={notify.loading} onClick={handleUpdateProfile}>
+                        <button className="btn btn-danger px-4 mt-4 pb-4" disabled={notify.loading} onClick={handleUpdateProfile}>
                             Atualizar
                         </button>
                     </div>
 
                     <h3 className="text-uppercase">Pedidos</h3>
                     <div className="my-3 table-responsive">
-                        <table className="table-bordered table-hover w-100 text-uppercase mb-32"
+                        <table className="table-bordered table-hover w-100 text-uppercase mb-16"
                             style={{ minWidth: '600px', cursor: 'pointer' }}>
                             <thead className="bg-light font-weight-bold">
                                 <tr>
