@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import { useState, useContext, useEffect } from 'react'
-import {DataContext} from '../store/GlobalState'
+import { DataContext } from '../store/GlobalState'
 import { getData } from '../utils/fetchData'
 import ProdutoItem from '../components/product/produtoItem'
 import filterSearch from '../utils/filterSearch'
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 import Filter from '../components/Filter'
 
 const Produtos = (props) => {
@@ -14,20 +14,20 @@ const Produtos = (props) => {
   const [page, setPage] = useState(1)
   const router = useRouter()
 
-  const {state, dispatch} = useContext(DataContext)
-  const {auth} = state
+  const { state, dispatch } = useContext(DataContext)
+  const { auth } = state
 
   useEffect(() => {
     setProducts(props.products)
-  },[props.products])
+  }, [props.products])
 
   useEffect(() => {
-    if(Object.keys(router.query).length === 0) setPage(1)
-  },[router.query])
+    if (Object.keys(router.query).length === 0) setPage(1)
+  }, [router.query])
 
   const handleCheck = (id) => {
     products.forEach(product => {
-      if(product._id === id) product.checked = !product.checked
+      if (product._id === id) product.checked = !product.checked
     })
     setProducts([...products])
   }
@@ -41,25 +41,25 @@ const Produtos = (props) => {
   const handleDeleteAll = () => {
     let deleteArr = [];
     products.forEach(product => {
-      if(product.checked){
-          deleteArr.push({
-            data: '', 
-            id: product._id, 
-            title: 'Excluir todos os produtos selecionados?', 
-            type: 'DELETE_PRODUCT'
-          })
+      if (product.checked) {
+        deleteArr.push({
+          data: '',
+          id: product._id,
+          title: 'Excluir todos os produtos selecionados?',
+          type: 'DELETE_PRODUCT'
+        })
       }
     })
 
-    dispatch({type: 'ADD_MODAL', payload: deleteArr})
+    dispatch({ type: 'ADD_MODAL', payload: deleteArr })
   }
 
   const handleLoadmore = () => {
     setPage(page + 1)
-    filterSearch({router, page: page + 1})
+    filterSearch({ router, page: page + 1 })
   }
 
-  return(
+  return (
     <div className="Produtos">
       <Head>
         <title>Produtos</title>
@@ -68,13 +68,9 @@ const Produtos = (props) => {
       <Filter state={state} />
       {
         auth.user && auth.user.role === 'admin' &&
-        <div className="delete_all btn btn-danger mt-16 px-4" style={{marginBottom: '-10px'}}>
-          <input type="checkbox" checked={isCheck} onChange={handleCheckALL}
-          style={{width: '25px', height: '25px', transform: 'translateY(8px)'}} />
-
-          <button className="btn btn-danger ml-2"
-          data-toggle="modal" data-target="#exampleModal"
-          onClick={handleDeleteAll}>
+        <div className="delete_all btn btn-danger mt-16" style={{ marginBottom: '-10px', marginLeft: '10px' }}>
+          <input type="checkbox" checked={isCheck} onChange={handleCheckALL} style={{ width: '25px', height: '25px', transform: 'translateY(8px)' }} />
+          <button className="btn btn-danger ml-2" data-toggle="modal" data-target="#exampleModal" onClick={handleDeleteAll}>
             Deletar tudo
           </button>
         </div>
@@ -82,29 +78,29 @@ const Produtos = (props) => {
 
       <div className="products">
         {
-          products.length === 0 
-          ? <h2>Nenhum produto</h2>
+          products.length === 0
+            ? <h2>Nenhum produto</h2>
 
-          : products.map(product => (
-            <ProdutoItem key={product._id} product={product} handleCheck={handleCheck} />
-          ))
+            : products.map(product => (
+              <ProdutoItem key={product._id} product={product} handleCheck={handleCheck} />
+            ))
         }
       </div>
-      
+
       {
         props.result < page * 6 ? ""
-        : <button className="btn btn-outline-danger d-block mx-auto mb-4"
-        onClick={handleLoadmore}>
-          Mostar mais
-        </button>
+          : <button className="btn btn-outline-danger d-block mx-auto mb-4"
+            onClick={handleLoadmore}>
+            Mostar mais
+          </button>
       }
-    
+
     </div>
   )
 }
 
 
-export async function getServerSideProps({query}) {
+export async function getServerSideProps({ query }) {
   const page = query.page || 1
   const category = query.category || 'all'
   const sort = query.sort || ''
