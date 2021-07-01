@@ -135,7 +135,7 @@ const Perfil = () => {
                     </div>
 
                     <h3 className="text-uppercase">Pedidos</h3>
-                    <div className="my-3 table-responsive">
+                    <div className="my-3 mb-8 table-responsive">
                         <table className="table-bordered table-hover w-100 text-uppercase"
                             style={{ minWidth: '600px', cursor: 'pointer' }}>
                             <thead className="bg-light font-weight-bold">
