@@ -23,12 +23,12 @@ const DetailOrder = () => {
     return(
         <div className="my-3">
             <Head>
-                <title>Detail Orders</title>
+                <title>Detalhes do pedido</title>
             </Head>
 
             <div>
                 <button className="btn btn-dark" onClick={() => router.back()}>
-                    <i className="fas fa-long-arrow-alt-left"  aria-hidden="true"></i> Go Back
+                    <i className="fas fa-long-arrow-alt-left"  aria-hidden="true"></i> Volta
                 </button>
             </div>
             

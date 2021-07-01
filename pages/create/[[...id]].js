@@ -9,7 +9,7 @@ const ProductsManager = () => {
     const initialState = {
         product_id: "",
         title: '',
-        price: 0,
+        price: '',
         description: '',
         content: '',
         category: ''
@@ -116,29 +116,25 @@ const ProductsManager = () => {
             <Head>
                 <title>Produtos</title>
             </Head>
-            <form className="row" onSubmit={handleSubmit}>
-                <div className="col-md-6">
-                    <input type="text" name="product_id" value={product_id}
-                        placeholder="ID Produto" className="d-block my-4 w-100 p-2"
-                        onChange={handleChangeInput} />
-                    <input type="text" name="title" value={title}
-                        placeholder="Title" className="d-block my-4 w-100 p-2"
-                        onChange={handleChangeInput} />
-                    <div className="row">
-                        <div className="col-sm-6">
-                            <label htmlFor="price">Preço</label>
-                            <input type="number" name="price" value={price}
-                                placeholder="Preço" className="d-block w-100 p-2"
-                                onChange={handleChangeInput} />
-                        </div>
+            <form className="w-full max-w-lg container" onSubmit={handleSubmit}>
+                <div class="flex flex-wrap -mx-3">
+                    <div class="w-full md:w-1/2 px-3 md:mb-0">
+                        <input type="text" name="product_id" value={product_id} placeholder="ID Produto" className="d-block my-4 w-100 p-2 input-group-text text-left bg-white" onChange={handleChangeInput} />
                     </div>
-                    <textarea name="description" id="description" cols="30" rows="4"
-                        placeholder="Resumo" onChange={handleChangeInput}
-                        className="d-block my-4 w-100 p-2" value={description} />
-                    <textarea name="content" id="content" cols="30" rows="6"
-                        placeholder="Descrição" onChange={handleChangeInput}
-                        className="d-block my-4 w-100 p-2" value={content} />
-                    <div className="input-group-prepend px-0 my-2">
+                    <div class="w-full md:w-1/2 px-3">
+                        <input type="text" name="title" value={title} placeholder="Título" className="d-block my-4 w-100 p-2 input-group-text bg-white text-left" onChange={handleChangeInput} />
+                    </div>
+                </div>
+                <div class="flex flex-wrap -mx-3">
+                    <div class="w-full md:w-1/2 px-3 mb-0 md:mb-0">
+                        <textarea name="description" id="description" cols="20" rows="3" placeholder="Resumo" onChange={handleChangeInput} className="d-block my-4 w-100 p-2 input-group-text bg-white text-left" value={description} />
+                    </div>
+                    <div class="w-full md:w-1/2 px-3 mb-2 md:mb-0">
+                        <textarea name="content" id="content" cols="20" rows="3" placeholder="Descrição" onChange={handleChangeInput} className="d-block my-4 w-100 p-2 input-group-text bg-white text-left" value={content} />
+                    </div>
+                </div>
+                <div class="flex flex-wrap -mx-3">
+                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0 ml-auto">
                         <select name="category" id="category" value={category}
                             onChange={handleChangeInput} className="custom-select text-capitalize">
                             <option value="all">Todos os produtos</option>
@@ -151,32 +147,39 @@ const ProductsManager = () => {
                             }
                         </select>
                     </div>
-                    <button type="submit" className="btn btn-danger my-2 px-4">
+                    <div class="w-full md:w-1/3 px-3 mr-auto">
+                        <input type="number" name="price" value={price} placeholder="Preço" className="d-block w-100 p-2 custom-select" onChange={handleChangeInput} />
+                    </div>
+                </div>
+                <div className="grid justify-items-center">
+                    <div className="col-md-6 my-4">
+                        <div className="input-group mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Upload</span>
+                            </div>
+                            <div className="custom-file border rounded">
+                                <input type="file" className="custom-file-input"
+                                    onChange={handleUploadInput} multiple accept="image/*" />
+                            </div>
+                        </div>
+                        <div className="row img-up mx-0">
+                            {
+                                images.map((img, index) => (
+                                    <div key={index} className="file_img my-1">
+                                        <img src={img.url ? img.url : URL.createObjectURL(img)}
+                                            alt="" className="img-thumbnail rounded" />
+
+                                        <span onClick={() => deleteImage(index)}>X</span>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div className="grid justify-items-center">
+                    <button type="submit" className="btn btn-danger my-2 px-4 w-25">
                         {onEdit ? 'Atualizar' : 'Criar'}
                     </button>
-                </div>
-                <div className="col-md-6 my-4">
-                    <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                            <span className="input-group-text">Upload</span>
-                        </div>
-                        <div className="custom-file border rounded">
-                            <input type="file" className="custom-file-input"
-                                onChange={handleUploadInput} multiple accept="image/*" />
-                        </div>
-                    </div>
-                    <div className="row img-up mx-0">
-                        {
-                            images.map((img, index) => (
-                                <div key={index} className="file_img my-1">
-                                    <img src={img.url ? img.url : URL.createObjectURL(img)}
-                                        alt="" className="img-thumbnail rounded" />
-
-                                    <span onClick={() => deleteImage(index)}>X</span>
-                                </div>
-                            ))
-                        }
-                    </div>
                 </div>
             </form>
         </div>

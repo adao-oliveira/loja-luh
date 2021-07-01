@@ -95,7 +95,7 @@ const Perfil = () => {
             <section className="row text-secondary my-3 mt-48">
                 <div className="col-md-4">
                     <h3 className="text-center text-uppercase">
-                        {auth.user.role === 'user' ? 'User Profile' : 'Perfil Administrador'}
+                        {auth.user.role === 'user' ? 'User Profile' : 'Administrador'}
                     </h3>
 
                     <div className="avatar">
@@ -137,7 +137,7 @@ const Perfil = () => {
                 </div>
 
                 <div className="col-md-8">
-                    <h3 className="text-uppercase">Ordem</h3>
+                    <h3 className="text-uppercase">Pedidos</h3>
 
                     <div className="my-3 table-responsive">
                         <table className="table-bordered table-hover w-100 text-uppercase"

@@ -5,7 +5,7 @@ import { getData } from '../utils/fetchData'
 import ProdutoItem from '../components/product/produtoItem'
 import filterSearch from '../utils/filterSearch'
 import {useRouter} from 'next/router'
-// import Filter from '../components/Filter'
+import Filter from '../components/Filter'
 
 const Produtos = (props) => {
   const [products, setProducts] = useState(props.products)
@@ -65,7 +65,7 @@ const Produtos = (props) => {
         <title>Produtos</title>
       </Head>
 
-      {/* <Filter state={state} /> */}
+      <Filter state={state} />
       {
         auth.user && auth.user.role === 'admin' &&
         <div className="delete_all btn btn-danger mt-32" style={{marginBottom: '-10px'}}>
