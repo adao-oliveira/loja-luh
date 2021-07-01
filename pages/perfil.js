@@ -128,7 +128,7 @@ const Perfil = () => {
                             <input type="password" name="cf_password" value={cf_password} className="form-control" onChange={handleChange} />
                         </div>
 
-                        <button className="btn btn-danger px-4 mt-4 mb-24" disabled={notify.loading} onClick={handleUpdateProfile}>
+                        <button className="btn btn-danger px-4 mt-4 mb-16" disabled={notify.loading} onClick={handleUpdateProfile}>
                             Atualizar
                         </button>
                     </div>
