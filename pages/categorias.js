@@ -56,13 +56,12 @@ const Categories = () => {
 
             {
                 categories.map(catogory => (
-                    <div key={catogory._id} className="card my-2 text-capitalize mb-32">
-                        <div className="card-body d-flex justify-content-between">
+                    <div key={catogory._id} className="card my-2 text-capitalize">
+                        <div className="card-body d-flex justify-content-between mb-32">
                             {catogory.name}
 
                             <div style={{ cursor: 'pointer' }}>
-                                <i className="fas fa-edit mr-2 text-info"
-                                    onClick={() => handleEditCategory(catogory)}></i>
+                                <i className="fas fa-edit mr-2 text-info" onClick={() => handleEditCategory(catogory)}></i>
 
                                 <i className="fas fa-trash-alt text-danger"
                                     data-toggle="modal" data-target="#exampleModal"
@@ -75,12 +74,10 @@ const Categories = () => {
                                     })} >
                                 </i>
                             </div>
-
                         </div>
                     </div>
                 ))
             }
-
         </div>
     )
 }
