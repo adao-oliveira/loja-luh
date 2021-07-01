@@ -108,24 +108,24 @@ const Perfil = () => {
                             </span>
                         </div>
 
-                        <div className="form-group">
+                        <div className="col-md-12 my-4">
                             <label htmlFor="name">Nome</label>
                             <input type="text" name="name" value={name} className="d-block my-4 w-100 p-2 input-group-text text-left bg-white" onChange={handleChange} />
                         </div>
 
-                        <div className="form-group">
+                        <div className="col-md-12 my-4">
                             <label htmlFor="email">E-mail</label>
-                            <input type="text" name="email" defaultValue={auth.user.email} className="d-block my-4 w-100 p-2 input-group-text text-left bg-white" disabled={true} />
+                            <input type="text" name="email" defaultValue={auth.user.email} className="form-control" disabled={true} />
                         </div>
 
-                        <div className="form-group">
+                        <div className="col-md-12 my-4">
                             <label htmlFor="password">Nova Senha</label>
-                            <input type="password" name="password" value={password} className="d-block my-4 w-100 p-2 input-group-text text-left bg-white" onChange={handleChange} />
+                            <input type="password" name="password" value={password} className="form-control" onChange={handleChange} />
                         </div>
 
-                        <div className="form-group">
+                        <div className="col-md-12 my-4">
                             <label htmlFor="cf_password">Confirmar nova Senha</label>
-                            <input type="password" name="cf_password" value={cf_password} className="d-block my-4 w-100 p-2 input-group-text text-left bg-white" onChange={handleChange} />
+                            <input type="password" name="cf_password" value={cf_password} className="form-control" onChange={handleChange} />
                         </div>
 
                         <button className="btn btn-danger px-4 mb-4" disabled={notify.loading}
