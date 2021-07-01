@@ -1,5 +1,5 @@
 import connectDB from '../../../utils/connectDB'
-import Categorias from '../../../models/categoriasModel'
+import Categories from '../../../models/categoriesModel'
 import Products from '../../../models/productModel'
 import auth from '../../../middleware/auth'
 
@@ -25,7 +25,7 @@ const updateCategory = async (req, res) => {
         const {id} = req.query
         const {name} = req.body
 
-        const newCategory = await Categorias.findOneAndUpdate({_id: id}, {name})
+        const newCategory = await Categories.findOneAndUpdate({_id: id}, {name})
         res.json({
             msg: "Sucesso! Atualizado uma nova categoria",
             category: {
@@ -51,7 +51,7 @@ const deleteCategory = async (req, res) => {
             err: "Exclua todos os produtos com um relacionamento"
         })
 
-        await Categorias.findByIdAndDelete(id)
+        await Categories.findByIdAndDelete(id)
         
         res.json({msg: "Sucesso! Excluiu uma categoria"})
     } catch (err) {

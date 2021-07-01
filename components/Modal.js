@@ -21,8 +21,8 @@ const Modal = () => {
         })
     }
 
-    const deleteCategorias = (item) => {
-        deleteData(`categorias/${item.id}`, auth.token)
+    const deleteCategories = (item) => {
+        deleteData(`categories/${item.id}`, auth.token)
         .then(res => {
             if(res.err) return dispatch({type: 'NOTIFY', payload: {error: res.err}})
 
@@ -50,7 +50,7 @@ const Modal = () => {
 
                 if(item.type === 'ADD_USERS') deleteUser(item)
         
-                if(item.type === 'ADD_CATEGORIAS') deleteCategorias(item)
+                if(item.type === 'ADD_CATEGORIES') deleteCategories(item)
         
                 if(item.type === 'DELETE_PRODUCT') deleteProduct(item)
         

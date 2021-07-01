@@ -4,11 +4,11 @@ import {DataContext} from '../store/GlobalState'
 import {updateItem} from '../store/Actions'
 import { postData, putData } from "../utils/fetchData";
 
-const Categorias = () => {
+const Categories = () => {
     const [name, setName] = useState('')
 
     const {state, dispatch} = useContext(DataContext)
-    const {categorias, auth} = state
+    const {categories, auth} = state
     
     const [id, setId] = useState('')
 
@@ -22,14 +22,14 @@ const Categorias = () => {
 
         let res;
         if(id){
-            res = await putData(`categorias/${id}`, {name}, auth.token)
+            res = await putData(`categories/${id}`, {name}, auth.token)
             if(res.err) return dispatch({type: 'NOTIFY', payload: {error: res.err}})
-            dispatch(updateItem(categorias, id, res.category, 'ADD_CATEGORIAS'))
+            dispatch(updateItem(categories, id, res.category, 'ADD_CATEGORIES'))
 
         }else{
-            res = await postData('categorias', {name}, auth.token)
+            res = await postData('categories', {name}, auth.token)
             if(res.err) return dispatch({type: 'NOTIFY', payload: {error: res.err}})
-            dispatch({type: "ADD_CATEGORIAS", payload: [...categorias, res.newCategory]})
+            dispatch({type: "ADD_CATEGORIES", payload: [...categories, res.newCategory]})
         }
         setName('')
         setId('')
@@ -47,7 +47,7 @@ const Categorias = () => {
                 <title>Categorias</title>
             </Head>
 
-            <div className="input-group mb-3 mt-16">
+            <div className="input-group mb-3 mt-32">
                 <input type="text" className="form-control"
                 placeholder="Adicionar uma nova categoria" value={name}
                 onChange={e => setName(e.target.value)} />
@@ -59,7 +59,7 @@ const Categorias = () => {
             </div>
 
             {
-                categorias.map(catogory => (
+                categories.map(catogory => (
                     <div key={catogory._id} className="card my-2 text-capitalize">
                         <div className="card-body d-flex justify-content-between">
                             {catogory.name}
@@ -73,8 +73,8 @@ const Categorias = () => {
                                 onClick={() => dispatch({
                                     type: 'ADD_MODAL',
                                     payload: [{ 
-                                        data: categorias, id: catogory._id, 
-                                        title: catogory.name, type: 'ADD_CATEGORIAS' 
+                                        data: categories, id: catogory._id, 
+                                        title: catogory.name, type: 'ADD_CATEGORIES' 
                                     }]
                                 })} ></i>
                             </div>
@@ -88,4 +88,4 @@ const Categorias = () => {
     )
 }
 
-export default Categorias
+export default Categories

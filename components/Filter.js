@@ -8,7 +8,7 @@ const Filter = ({ state }) => {
     const [sort, setSort] = useState('')
     const [category, setCategory] = useState('')
 
-    const { categorias } = state
+    const { categories } = state
 
     const router = useRouter()
 
@@ -36,7 +36,7 @@ const Filter = ({ state }) => {
                     <option value="all">Todos os Produtos</option>
 
                     {
-                        categorias.map(item => (
+                        categories.map(item => (
                             <option key={item._id} value={item._id}>{item.name}</option>
                         ))
                     }
