@@ -76,17 +76,18 @@ const Produtos = (props) => {
               <ProdutoItem key={product._id} product={product} handleCheck={handleCheck} />
             ))
         }
-      </div>
 
-      {
-        auth.user && auth.user.role === 'admin' &&
-        <div className="delete_all btn btn-danger mt-16" style={{ marginBottom: '-10px', marginLeft: '20px' }}>
-          <input type="checkbox" checked={isCheck} onChange={handleCheckALL} style={{ width: '25px', height: '25px', transform: 'translateY(8px)' }} />
-          <button className="btn btn-danger ml-2" data-toggle="modal" data-target="#exampleModal" onClick={handleDeleteAll}>
-            Deletar tudo
-          </button>
-        </div>
-      }
+        {
+          auth.user && auth.user.role === 'admin' &&
+          <div className="delete_all btn btn-danger mt-16" style={{ marginBottom: '-10px', marginLeft: '20px' }}>
+            <input type="checkbox" checked={isCheck} onChange={handleCheckALL} style={{ width: '25px', height: '25px', transform: 'translateY(8px)' }} />
+            <button className="btn btn-danger ml-2" data-toggle="modal" data-target="#exampleModal" onClick={handleDeleteAll}>
+              Deletar tudo
+            </button>
+          </div>
+        }
+        
+      </div>
 
       {
         props.result < page * 6 ? ""
