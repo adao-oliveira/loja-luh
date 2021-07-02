@@ -33,7 +33,7 @@ const productSchema = new mongoose.Schema({
     },
     inStock: {
         type: Number,
-        default: 0
+        default: false
     },
     sold: {
         type: Number,
