@@ -9,14 +9,13 @@ const ProductsManager = () => {
     const initialState = {
         product_id: "",
         title: '',
-        price: 0,
-        inStock: 0,
+        price: '',
         description: '',
         content: '',
         category: ''
     }
     const [product, setProduct] = useState(initialState)
-    const { product_id, title, price, inStock, description, content, category } = product
+    const { product_id, title, price, description, content, category } = product
 
     const [images, setImages] = useState([])
 
@@ -58,8 +57,8 @@ const ProductsManager = () => {
             return dispatch({ type: 'NOTIFY', payload: { error: 'Arquivos não existem' } })
 
         files.forEach(file => {
-            if (file.size > 1024 * 1024)
-                return err = 'O maior tamanho de imagem é 1mb'
+            if (file.size > 1024 * 1024 * 5)
+                return err = 'O maior tamanho de imagem é 5mb'
 
             if (file.type !== 'image/jpeg' && file.type !== 'image/png')
                 return err = 'O formato da imagem está incorreto'
@@ -88,7 +87,7 @@ const ProductsManager = () => {
         if (auth.user.role !== 'admin')
             return dispatch({ type: 'NOTIFY', payload: { error: 'A autenticação não é válida' } })
 
-        if (!product_id || !title || !price || !inStock || !description || !content || category === 'all' || images.length === 0)
+        if (!product_id || !title || !price || !description || !content || category === 'all' || images.length === 0)
             return dispatch({ type: 'NOTIFY', payload: { error: 'Por favor, adicione todos os campos' } })
 
 
