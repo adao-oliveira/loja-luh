@@ -52,25 +52,23 @@ const Login = () => {
   return (
     <div>
       <Head>
-        <title>Pagina de Login</title>
+        <title>Login</title>
       </Head>
 
       <main class="container mt-48 mb-32" style={{ maxWidth: '600px' }}>
         <h1 className="font-light">Login</h1>
         <form onSubmit={handleSubmit}>
-          <div class="input-field">
-            <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp"
-              name="email" value={email} onChange={handleChangeInput}  placeholder="E-mail" />
+          <div class="input-field mt-2">
+            <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value={email} onChange={handleChangeInput} placeholder="E-mail" />
 
-              <div class="underline"></div>
+            <div class="underline"></div>
 
           </div>
-          <div class="input-field">
-            <input type="password" id="exampleInputPassword1"
-              name="password" value={password} onChange={handleChangeInput} placeholder="Senha" />
+          <div class="input-field mt-6">
+            <input type="password" id="exampleInputPassword1" name="password" value={password} onChange={handleChangeInput} placeholder="Senha" />
 
-              <div class="underline"></div>
-              
+            <div class="underline"></div>
+
           </div>
 
           <input type="submit" value="Login" />

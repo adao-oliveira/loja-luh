@@ -23,36 +23,26 @@ const DetailProduct = (props) => {
             </Head>
 
             <div className="col-md-6">
-                <img src={product.images[tab].url} alt={product.images[tab].url}
-                    className="d-block img-thumbnail rounded mt-4 w-100"
-                    style={{ height: '350px' }} />
-
+                <img src={product.images[tab].url} alt={product.images[tab].url} className="d-block img-thumbnail rounded mt-4 w-100" style={{ height: '350px' }} />
                 <div className="row mx-0" style={{ cursor: 'pointer' }} >
-
                     {product.images.map((img, index) => (
                         <img key={index} src={img.url} alt={img.url}
                             className={`img-thumbnail rounded ${isActive(index)}`}
                             style={{ height: '80px', width: '20%' }}
                             onClick={() => setTab(index)} />
                     ))}
-
                 </div>
             </div>
-
             <div className="col-md-6 mt-3">
                 <h2 className="text-uppercase">{product.title}</h2>
                 <h5 className="text-danger">R${product.price}</h5>
-
                 <div className="my-2">{product.description}</div>
                 <div className="my-2">
                     {product.content}
                 </div>
-
-                <button type="button" className="btn btn-danger d-block my-3 px-5"
-                    onClick={() => dispatch(addToCart(product, carrinho))} >
+                <button type="button" className="btn btn-danger d-block my-3 px-5" onClick={() => dispatch(addToCart(product, carrinho))} >
                     Comprar
                 </button>
-
             </div>
         </div>
     )

@@ -49,34 +49,34 @@ const Registrar = () => {
 
       <form className="container mx-auto my-4 mt-48" style={{ maxWidth: '600px' }} onSubmit={handleSubmit}>
         <h1 className="mb-4 font-light">Registre-se</h1>
-        <div className="form-group input-field">
+        <div className="form-group input-field mt-2">
           <input type="text" id="name"
             name="name" value={name} onChange={handleChangeInput} placeholder="Nome" />
             <div class="underline"></div>
         </div>
 
-        <div className="form-group input-field">
+        <div className="form-group input-field mt-6">
           <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp"
             name="email" value={email} onChange={handleChangeInput} placeholder="E-mail" />
             <div class="underline"></div>
           <small id="emailHelp" className="form-text text-muted"></small>
         </div>
 
-        <div className="form-group input-field">
+        <div className="form-group input-field mt-6">
           <input type="password" id="exampleInputPassword1"
             name="password" value={password} onChange={handleChangeInput} placeholder="Senha" />
             <div class="underline"></div>
         </div>
 
-        <div className="form-group input-field">
+        <div className="form-group input-field mt-6">
           <input type="password" id="exampleInputPassword2"
             name="cf_password" value={cf_password} onChange={handleChangeInput} placeholder="Confirme a senha" />
             <div class="underline"></div>
         </div>
 
-        <button type="submit" className="btn btn-danger">Registrar</button>
+        <input type="submit" value="Registrar" />
 
-        <p className="my-2">
+        <p className="my-2 pb-12">
           Já tem uma conta? <Link href="/login"><a style={{ color: 'crimson' }}>Fazer login</a></Link>
         </p>
       </form>

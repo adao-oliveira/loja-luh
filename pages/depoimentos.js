@@ -1,9 +1,13 @@
 import React from "react";
+import Head from 'next/head'
 
 const Depoimentos = () => {
 
     return (
         <>
+            <Head>
+                <title>Depoimentos</title>
+            </Head>
             <div className="container">
                 <div className="row">
                     <div className="col-md-8 pt-10 col-center m-auto">
