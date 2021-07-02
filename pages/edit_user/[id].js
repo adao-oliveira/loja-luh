@@ -41,7 +41,7 @@ const EditUser = () => {
 
                     dispatch(updateItem(usuarios, editUser._id, {
                         ...editUser, role
-                    }, 'ADD_USERS'))
+                    }, 'ADD_USUARIOS'))
 
                     return dispatch({ type: 'NOTIFY', payload: { success: res.msg } })
                 })

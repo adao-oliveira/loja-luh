@@ -24,12 +24,12 @@ const Categories = () => {
         if (id) {
             res = await putData(`categories/${id}`, { name }, auth.token)
             if (res.err) return dispatch({ type: 'NOTIFY', payload: { error: res.err } })
-            dispatch(updateItem(categories, id, res.category, 'ADD_CATEGORIES'))
+            dispatch(updateItem(categories, id, res.category, 'ADD_CATEGORIAS'))
 
         } else {
             res = await postData('categories', { name }, auth.token)
             if (res.err) return dispatch({ type: 'NOTIFY', payload: { error: res.err } })
-            dispatch({ type: "ADD_CATEGORIES", payload: [...categories, res.newCategory] })
+            dispatch({ type: "ADD_CATEGORIAS", payload: [...categories, res.newCategory] })
         }
         setName('')
         setId('')
@@ -69,7 +69,7 @@ const Categories = () => {
                                         type: 'ADD_MODAL',
                                         payload: [{
                                             data: categories, id: catogory._id,
-                                            title: catogory.name, type: 'ADD_CATEGORIES'
+                                            title: catogory.name, type: 'ADD_CATEGORIAS'
                                         }]
                                     })} >
                                 </i>

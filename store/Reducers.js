@@ -28,12 +28,12 @@ const reducers = (state, action) => {
                 ...state,
                 orders: action.payload
             };
-        case ACTIONS.ADD_USERS:
+        case ACTIONS.ADD_USUARIOS:
             return {
                 ...state,
                 usuarios: action.payload
             };
-        case ACTIONS.ADD_CATEGORIES:
+        case ACTIONS.ADD_CATEGORIAS:
             return {
                 ...state,
                 categories: action.payload

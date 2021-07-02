@@ -48,9 +48,9 @@ const Modal = () => {
                     dispatch(deleteItem(item.data, item.id, item.type))
                 }
 
-                if(item.type === 'ADD_USERS') deleteUser(item)
+                if(item.type === 'ADD_USUARIOS') deleteUser(item)
         
-                if(item.type === 'ADD_CATEGORIES') deleteCategories(item)
+                if(item.type === 'ADD_CATEGORIAS') deleteCategories(item)
         
                 if(item.type === 'DELETE_PRODUCT') deleteProduct(item)
         

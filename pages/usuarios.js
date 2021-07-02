@@ -65,7 +65,7 @@ const Usuario = () => {
                                         data-toggle="modal" data-target="#exampleModal"
                                         onClick={() => dispatch({
                                             type: 'ADD_MODAL',
-                                            payload: [{ data: usuarios, id: user._id, title: user.name, type: 'ADD_USERS' }]
+                                            payload: [{ data: usuarios, id: user._id, title: user.name, type: 'ADD_USUARIOS' }]
                                         })}></i>
                                         
                                         : <i className="fas fa-trash-alt text-danger ml-2" title="Remove"></i>

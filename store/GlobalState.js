@@ -33,7 +33,7 @@ export const DataProvider = ({children}) => {
             if(res.err) return dispatch({type: 'NOTIFY', payload: {error: res.err}})
 
             dispatch({ 
-                type: "ADD_CATEGORIES",
+                type: "ADD_CATEGORIAS",
                 payload: res.categories
             })
         })
@@ -64,12 +64,12 @@ export const DataProvider = ({children}) => {
                 .then(res => {
                     if(res.err) return dispatch({type: 'NOTIFY', payload: {error: res.err}})
                 
-                    dispatch({type: 'ADD_USERS', payload: res.usuarios})
+                    dispatch({type: 'ADD_USUARIOS', payload: res.usuarios})
                 })
             }
         }else{
             dispatch({type: 'ADD_ORDERS', payload: []})
-            dispatch({type: 'ADD_USERS', payload: []})
+            dispatch({type: 'ADD_USUARIOS', payload: []})
         }
     },[auth.token])
 
