@@ -116,6 +116,11 @@ const ProductsManager = () => {
                 <title>Produtos</title>
             </Head>
             <form className="w-full max-w-lg container" onSubmit={handleSubmit}>
+                <div class="flex flex-wrap -mx-3 -mb-8">
+                    <div class="w-full md:w-1/1 px-3">
+                        <input type="text" name="title" value={title} placeholder="Título" className="d-block my-4 w-100 p-2 input-group-text bg-white text-left" onChange={handleChangeInput} />
+                    </div>
+                </div>
                 <div class="flex flex-wrap -mx-3">
                     <div class="w-full md:w-1/2 px-3 md:mb-0 -mb-8">
                         <textarea name="description" id="description" cols="20" rows="3" placeholder="Resumo" onChange={handleChangeInput} className="d-block my-4 w-100 p-2 input-group-text bg-white text-left" value={description} />
