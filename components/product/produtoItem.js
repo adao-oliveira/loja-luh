@@ -27,7 +27,7 @@ const produtoItem = ({product, handleCheck}) => {
     const adminLink = () => {
         return(
             <>
-                <Link href={`create/${product._id}`}>
+                <Link href={`criarProduto/${product._id}`}>
                     <a className="btn btn-dark"
                     style={{marginRight: '5px', flex: 1}}>Editar</a>
                 </Link>
