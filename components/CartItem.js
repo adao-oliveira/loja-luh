@@ -26,9 +26,7 @@ const CartItem = ({item, dispatch, carrinho}) => {
 
                 <span className="px-3">{item.quantity}</span>
 
-                <button className="btn btn-outline-dark"
-                onClick={ () => dispatch(increase(carrinho, item._id)) }
-                disabled={item.quantity === item.inStock ? true : false} > + </button>
+                <button className="btn btn-outline-dark" onClick={ () => dispatch(increase(carrinho, item._id)) } > + </button>
             </td>
 
             <td className="align-middle" style={{minWidth: '50px', cursor: 'pointer'}}>

@@ -31,10 +31,6 @@ const productSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    inStock: {
-        type: Number,
-        default: 0
-    },
     sold: {
         type: Number,
         default: 0
