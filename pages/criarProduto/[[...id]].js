@@ -9,14 +9,13 @@ const ProductsManager = () => {
     const initialState = {
         product_id: "",
         title: '',
-        price: 0,
-        inStock: 0,
+        price: '',
         description: '',
         content: '',
         category: ''
     }
     const [product, setProduct] = useState(initialState)
-    const { product_id, title, price, inStock, description, content, category } = product
+    const { product_id, title, price, description, content, category } = product
 
     const [images, setImages] = useState([])
 
@@ -88,7 +87,7 @@ const ProductsManager = () => {
         if (auth.user.role !== 'admin')
             return dispatch({ type: 'NOTIFY', payload: { error: 'A autenticação não é válida' } })
 
-        if (!product_id || !title || !price || !inStock || !description || !content || category === 'all' || images.length === 0)
+        if (!product_id || !title || !price || !description || !content || category === 'all' || images.length === 0)
             return dispatch({ type: 'NOTIFY', payload: { error: 'Por favor, adicione todos os campos' } })
 
 

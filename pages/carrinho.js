@@ -38,11 +38,11 @@ const Cart = () => {
       const updateCart = async () => {
         for (const item of cartLocal) {
           const res = await getData(`product/${item._id}`)
-          const { _id, title, images, price, inStock, sold } = res.product
-          if (inStock > 0) {
+          const { _id, title, images, price, sold } = res.product
+          if (quantity > 0) {
             newArr.push({
-              _id, title, images, price, inStock, sold,
-              quantity: item.quantity > inStock ? 1 : item.quantity
+              _id, title, images, price, sold,
+              quantity: item.quantity > quantity ? 1 : item.quantity
             })
           }
         }
@@ -61,7 +61,7 @@ const Cart = () => {
     let newCart = [];
     for (const item of carrinho) {
       const res = await getData(`product/${item._id}`)
-      if (res.product.inStock - item.quantity >= 0) {
+      if (res.product.item.quantity >= 0) {
         newCart.push(item)
       }
     }
