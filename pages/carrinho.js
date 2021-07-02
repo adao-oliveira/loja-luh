@@ -38,7 +38,13 @@ const Cart = () => {
       const updateCart = async () => {
         for (const item of cartLocal) {
           const res = await getData(`product/${item._id}`)
-          const { _id, title, images, price, sold } = res.product
+          const { _id, title, images, price, inStock, sold } = res.product
+          if (inStock > 0) {
+            newArr.push({
+              _id, title, images, price, inStock, sold,
+              quantity: item.quantity > inStock ? 1 : item.quantity
+            })
+          }
         }
 
         dispatch({ type: 'ADD_CART', payload: newArr })
@@ -55,6 +61,18 @@ const Cart = () => {
     let newCart = [];
     for (const item of carrinho) {
       const res = await getData(`product/${item._id}`)
+      if (res.product.inStock - item.quantity >= 0) {
+        newCart.push(item)
+      }
+    }
+
+    if (newCart.length < carrinho.length) {
+      setCallback(!callback)
+      return dispatch({
+        type: 'NOTIFY', payload: {
+          error: 'O produto está fora de estoque ou a quantidade é insuficiente'
+        }
+      })
     }
 
     dispatch({ type: 'NOTIFY', payload: { loading: true } })
