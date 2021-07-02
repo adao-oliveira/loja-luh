@@ -4,7 +4,6 @@ import { getData } from '../utils/fetchData'
 import { useRouter } from 'next/router'
 
 const Filter = ({ state }) => {
-    const [search, setSearch] = useState('')
     const [sort, setSort] = useState('')
     const [category, setCategory] = useState('')
 
@@ -23,13 +22,9 @@ const Filter = ({ state }) => {
         filterSearch({ router, sort: e.target.value })
     }
 
-    useEffect(() => {
-        filterSearch({ router, search: search ? search.toLowerCase() : 'all' })
-    }, [search])
-
     return (
-        <div className="input-group mt-48">
-            <div className="input-group-prepend col-md-2 px-4 mt-2">
+        <div className="container flex flex-wrap mt-48">
+            <div className="w-full md:w-1/2 px-3 mb-3 md:mb-0 ml-auto">
                 <select className="custom-select text-capitalize" value={category} onChange={handleCategory}>
                     <option value="all">Todos os Produtos</option>
                     {
@@ -39,7 +34,7 @@ const Filter = ({ state }) => {
                     }
                 </select>
             </div>
-            <div className="input-group-prepend col-md-2 px-4 mt-2">
+            <div className="w-full md:w-1/2 px-3 md:mb-0 mr-auto -mb-2">
                 <select className="custom-select text-capitalize" value={sort} onChange={handleSort}>
                     <option value="-createdAt">Mais recente</option>
                     <option value="oldest">Mais antigo</option>
@@ -48,9 +43,6 @@ const Filter = ({ state }) => {
                     <option value="price">Preço: Baixo</option>
                 </select>
             </div>
-            <form autoComplete="off" className="mt-2 col-md-8 px-4">
-                <input type="text" className="form-control" list="title_product" value={search.toLowerCase()} onChange={e => setSearch(e.target.value)} placeholder="Pesquisar" />
-            </form>
         </div>
     )
 }
