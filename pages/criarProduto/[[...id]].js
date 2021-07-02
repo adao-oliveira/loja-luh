@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 
 const ProductsManager = () => {
     const initialState = {
+        product_id: "",
         title: '',
         price: '',
         description: '',
@@ -14,7 +15,7 @@ const ProductsManager = () => {
         category: ''
     }
     const [product, setProduct] = useState(initialState)
-    const { title, price, description, content, category } = product
+    const { product_id, title, price, description, content, category } = product
 
     const [images, setImages] = useState([])
 
@@ -86,7 +87,7 @@ const ProductsManager = () => {
         if (auth.user.role !== 'admin')
             return dispatch({ type: 'NOTIFY', payload: { error: 'A autenticação não é válida' } })
 
-        if (!title || !price || !description || !content || category === 'all' || images.length === 0)
+        if (!product_id || !title || !price || !description || !content || category === 'all' || images.length === 0)
             return dispatch({ type: 'NOTIFY', payload: { error: 'Por favor, adicione todos os campos' } })
 
 
@@ -117,7 +118,10 @@ const ProductsManager = () => {
             </Head>
             <form className="w-full max-w-lg container" onSubmit={handleSubmit}>
                 <div class="flex flex-wrap -mx-3 -mb-8">
-                    <div class="w-full md:w-1/1 px-3">
+                    <div class="w-full md:w-1/2 px-3 md:mb-0 -mb-8">
+                        <input type="text" name="product_id" value={product_id} placeholder="ID Produto" className="d-block my-4 w-100 p-2 input-group-text text-left bg-white" onChange={handleChangeInput} />
+                    </div>
+                    <div class="w-full md:w-1/2 px-3">
                         <input type="text" name="title" value={title} placeholder="Título" className="d-block my-4 w-100 p-2 input-group-text bg-white text-left" onChange={handleChangeInput} />
                     </div>
                 </div>
