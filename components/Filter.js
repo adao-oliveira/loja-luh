@@ -38,7 +38,7 @@ const Filter = ({ state }) => {
                 <select className="custom-select text-capitalize" value={sort} onChange={handleSort}>
                     <option value="-createdAt">Mais recente</option>
                     <option value="oldest">Mais antigo</option>
-                    <option value="-sold">Melhores vendas</option>
+                    <option value="-sold">Mais vendidos</option>
                     <option value="-price">Preço: Alto</option>
                     <option value="price">Preço: Baixo</option>
                 </select>
