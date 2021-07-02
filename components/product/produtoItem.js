@@ -3,21 +3,20 @@ import { useContext } from 'react'
 import { DataContext } from '../../store/GlobalState'
 import { addToCart } from '../../store/Actions'
 
-const produtoItem = ({product, handleCheck}) => {
+const produtoItem = ({ product, handleCheck }) => {
     const { state, dispatch } = useContext(DataContext)
     const { carrinho, auth } = state
 
     const userLink = () => {
-        return(
+        return (
             <>
                 <Link href={`product/${product._id}`}>
                     <a className="btn btn-success"
-                    style={{marginRight: '5px', flex: 1}}>Visualizar</a>
+                        style={{ marginRight: '5px', flex: 1 }}>Visualizar</a>
                 </Link>
                 <button className="btn btn-danger"
-                style={{marginLeft: '5px', flex: 1}}
-                disabled={product.inStock === 0 ? true : false} 
-                onClick={() => dispatch(addToCart(product, carrinho))} >
+                    style={{ marginLeft: '5px', flex: 1 }}
+                    onClick={() => dispatch(addToCart(product, carrinho))} >
                     Comprar
                 </button>
             </>
@@ -25,22 +24,22 @@ const produtoItem = ({product, handleCheck}) => {
     }
 
     const adminLink = () => {
-        return(
+        return (
             <>
                 <Link href={`create/${product._id}`}>
                     <a className="btn btn-dark"
-                    style={{marginRight: '5px', flex: 1}}>Editar</a>
+                        style={{ marginRight: '5px', flex: 1 }}>Editar</a>
                 </Link>
                 <button className="btn btn-danger"
-                style={{marginLeft: '5px', flex: 1}}
-                data-toggle="modal" data-target="#exampleModal"
-                onClick={() => dispatch({
-                    type: 'ADD_MODAL',
-                    payload: [{ 
-                        data: '', id: product._id, 
-                        title: product.title, type: 'DELETE_PRODUCT' 
-                    }]
-                })} >
+                    style={{ marginLeft: '5px', flex: 1 }}
+                    data-toggle="modal" data-target="#exampleModal"
+                    onClick={() => dispatch({
+                        type: 'ADD_MODAL',
+                        payload: [{
+                            data: '', id: product._id,
+                            title: product.title, type: 'DELETE_PRODUCT'
+                        }]
+                    })} >
                     Deletar
                 </button>
             </>
@@ -63,12 +62,7 @@ const produtoItem = ({product, handleCheck}) => {
                 </h5>
 
                 <div className="row justify-content-between mx-0">
-                    <h6 className="text-danger">R${product.price}</h6>
-                    {
-                        product.inStock > 0
-                        ? <h6 className="text-danger">Em estoque: {product.inStock}</h6>
-                        : <h6 className="text-danger">Fora de estoque</h6>
-                    }
+                    <h6 className="text-danger">${product.price}</h6>
                 </div>
 
                 <p className="card-text" title={product.description}>
