@@ -46,14 +46,14 @@ const produtoItem = ({ product, handleCheck }) => {
         )
     }
 
-    return(
+    return (
         <div className="card" style={{ width: '18rem' }}>
             {
                 auth.user && auth.user.role === 'admin' &&
                 <input type="checkbox" checked={product.checked}
-                className="position-absolute"
-                style={{height: '20px', width: '20px'}}
-                onChange={() => handleCheck(product._id)} />
+                    className="position-absolute"
+                    style={{ height: '20px', width: '20px' }}
+                    onChange={() => handleCheck(product._id)} />
             }
             <img className="card-img-top" src={product.images[0].url} alt={product.images[0].url} />
             <div className="card-body">
@@ -61,19 +61,10 @@ const produtoItem = ({ product, handleCheck }) => {
                     {product.title}
                 </h5>
 
-                <div className="row justify-content-between mx-0">
-                    <h6 className="text-danger">${product.price}</h6>
-                    {
-                        product.inStock > 0
-                        ? <h6 className="text-danger">In Stock: {product.inStock}</h6>
-                        : <h6 className="text-danger">Out Stock</h6>
-                    }
-                </div>
-
                 <p className="card-text" title={product.description}>
                     {product.description}
                 </p>
-                    
+
                 <div className="row justify-content-between mx-0">
                     {!auth.user || auth.user.role !== "admin" ? userLink() : adminLink()}
                 </div>
