@@ -47,32 +47,35 @@ const Registrar = () => {
         <title>Registrar</title>
       </Head>
 
-      <form className="container mx-auto my-4 mt-48" style={{ maxWidth: '600px' }} onSubmit={handleSubmit}>
-        <h1 className="mb-4 font-light">Registre-se</h1>
-        <div className="form-group input-field mt-2">
-          <input type="text" id="name" name="name" value={name} onChange={handleChangeInput} placeholder="Nome" />
-          <div class="underline"></div>
+      <form className="mx-auto my-4 mt-48" style={{ maxWidth: '500px' }} onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="name">Nome</label>
+          <input type="text" className="form-control" id="name"
+            name="name" value={name} onChange={handleChangeInput} />
         </div>
 
-        <div className="form-group input-field mt-6">
-          <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value={email} onChange={handleChangeInput} placeholder="E-mail" />
-          <div class="underline"></div>
+        <div className="form-group">
+          <label htmlFor="exampleInputEmail1">E-mail</label>
+          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            name="email" value={email} onChange={handleChangeInput} />
           <small id="emailHelp" className="form-text text-muted"></small>
         </div>
 
-        <div className="form-group input-field mt-6">
-          <input type="password" id="exampleInputPassword1" name="password" value={password} onChange={handleChangeInput} placeholder="Senha" />
-          <div class="underline"></div>
+        <div className="form-group">
+          <label htmlFor="exampleInputPassword1">Senha</label>
+          <input type="password" className="form-control" id="exampleInputPassword1"
+            name="password" value={password} onChange={handleChangeInput} />
         </div>
 
-        <div className="form-group input-field mt-6">
-          <input type="password" id="exampleInputPassword2" name="cf_password" value={cf_password} onChange={handleChangeInput} placeholder="Confirme a senha" />
-          <div class="underline"></div>
+        <div className="form-group">
+          <label htmlFor="exampleInputPassword2">Confirmar Senha</label>
+          <input type="password" className="form-control" id="exampleInputPassword2"
+            name="cf_password" value={cf_password} onChange={handleChangeInput} />
         </div>
 
-        <input type="submit" value="Registrar" />
+        <button type="submit" className="btn btn-dark w-100">Registrar</button>
 
-        <p className="my-2 pb-12 mt-4">
+        <p className="my-2">
           Já tem uma conta? <Link href="/login"><a style={{ color: 'crimson' }}>Fazer login</a></Link>
         </p>
       </form>
