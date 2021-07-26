@@ -1,5 +1,7 @@
 import React from "react";
 import Head from 'next/head'
+import Link from 'next/link'
+
 
 const Home = () => {
 
@@ -34,7 +36,11 @@ const Home = () => {
                         <div className="card-body">
                           <h5 className="overview mt-4 text-base"><b>Bolo temático:</b> Estrada</h5>
                           <p className="card-text text-lg" style={{ color: '#ff6e86' }}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" className="btn btn-danger">Veja mais</a>
+                          <Link href="/produtos">
+                            <p className="btn btn-danger">
+                              Veja mais
+                            </p>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -46,7 +52,11 @@ const Home = () => {
                       <div className="card-body">
                         <h5 className="overview mt-4 text-base"><b>Bolo temático:</b> Unicórnio</h5>
                         <p className="card-text text-lg" style={{ color: '#ff6e86' }}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" className="btn btn-danger">Veja mais</a>
+                        <Link href="/produtos">
+                          <p className="btn btn-danger">
+                            Veja mais
+                          </p>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -57,7 +67,11 @@ const Home = () => {
                       <div className="card-body">
                         <h5 className="overview mt-4 text-base"><b>Bolo temático:</b> Super Mário World</h5>
                         <p className="card-text text-lg" style={{ color: '#ff6e86' }}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" className="btn btn-danger">Veja mais</a>
+                        <Link href="/produtos">
+                          <p className="btn btn-danger">
+                            Veja mais
+                          </p>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -89,7 +103,11 @@ const Home = () => {
                         <div className="card-body">
                           <h5 className="overview mt-4 text-base"><b>Empada</b></h5>
                           <p className="card-text text-lg" style={{ color: '#ff6e86' }}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" className="btn btn-danger">Veja mais</a>
+                          <Link href="/produtos">
+                            <p className="btn btn-danger">
+                              Veja mais
+                            </p>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -101,7 +119,11 @@ const Home = () => {
                       <div className="card-body">
                         <h5 className="overview mt-4 text-base"><b>Enroladinho de Salsicha</b></h5>
                         <p className="card-text text-lg" style={{ color: '#ff6e86' }}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" className="btn btn-danger">Veja mais</a>
+                        <Link href="/produtos">
+                          <p className="btn btn-danger">
+                            Veja mais
+                          </p>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -112,7 +134,11 @@ const Home = () => {
                       <div className="card-body">
                         <h5 className="overview mt-4 text-base"><b>Festa</b></h5>
                         <p className="card-text text-lg" style={{ color: '#ff6e86' }}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" className="btn btn-danger">Veja mais</a>
+                        <Link href="/produtos">
+                          <p className="btn btn-danger">
+                            Veja mais
+                          </p>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -145,7 +171,11 @@ const Home = () => {
                         <div className="card-body">
                           <h5 className="overview mt-4 text-base"><b>Torta de Limão Suíço</b></h5>
                           <p className="card-text text-lg" style={{ color: '#ff6e86' }}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" className="btn btn-danger">Veja mais</a>
+                          <Link href="/produtos">
+                            <p className="btn btn-danger">
+                              Veja mais
+                            </p>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -159,7 +189,11 @@ const Home = () => {
                         <div className="card-body">
                           <h5 className="overview mt-4 text-base"><b>Cupcake</b></h5>
                           <p className="card-text text-lg" style={{ color: '#ff6e86' }}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" className="btn btn-danger">Veja mais</a>
+                          <Link href="/produtos">
+                            <p className="btn btn-danger">
+                              Veja mais
+                            </p>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -171,7 +205,11 @@ const Home = () => {
                       <div className="card-body">
                         <h5 className="overview mt-4 text-base"><b>Docinho de Festa</b></h5>
                         <p className="card-text text-lg" style={{ color: '#ff6e86' }}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" className="btn btn-danger">Veja mais</a>
+                        <Link href="/produtos">
+                          <p className="btn btn-danger">
+                            Veja mais
+                          </p>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -182,7 +220,11 @@ const Home = () => {
                       <div className="card-body">
                         <h5 className="overview mt-4 text-base"><b>Maça Caramelizada</b></h5>
                         <p className="card-text text-lg" style={{ color: '#ff6e86' }}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" className="btn btn-danger">Veja mais</a>
+                        <Link href="/produtos">
+                          <p className="btn btn-danger">
+                            Veja mais
+                          </p>
+                        </Link>
                       </div>
                     </div>
                   </div>
