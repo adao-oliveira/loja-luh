@@ -11,7 +11,14 @@ const Home = () => {
         <title>Home</title>
       </Head>
       <div>
-        <div style={{marginTop:'175px'}}>
+        {/* DESKTOP */}
+        <div className="d-none d-md-block" style={{ marginTop: '175px' }}>
+          <video className="video-fluid z-depth-1 w-full -px-12" autoPlay loop muted>
+            <source src="https://res.cloudinary.com/robles-identity/video/upload/v1629178457/20210817_0230491_ycwknn.mp4" type="video/mp4" />
+          </video>
+        </div>
+        {/* MOBILE */}
+        <div className="d-lg-none" style={{ marginTop: '110px' }}>
           <video className="video-fluid z-depth-1 w-full -px-12" autoPlay loop muted>
             <source src="https://res.cloudinary.com/robles-identity/video/upload/v1629178457/20210817_0230491_ycwknn.mp4" type="video/mp4" />
           </video>
@@ -19,26 +26,14 @@ const Home = () => {
 
         {/* <!-- Grid row DESKTOP --> */}
 
-        <div class="container">
-          <div class="row">
-            <div class="col-sm">
-              <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
-            </div>
-            <div class="col-sm">
-              <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
-            </div>
-            <div class="col-sm">
-              <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
-            </div>
-          </div>
-        </div>
 
+        
         {/* <!-- Grid End DESKTOP --> */}
 
         {/* <!-- Grid row MOBILE --> */}
         <div className="container">
           <div className="row">
-            <div className="col-md-12 pt-10 col-center m-auto">
+            <div className="col-md-6 pt-10 col-center m-auto">
               {/* Bolos */}
               <div className="depoimento">
                 <h2>Bolo</h2>
