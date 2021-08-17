@@ -11,13 +11,31 @@ const Home = () => {
         <title>Home</title>
       </Head>
       <div>
-        <div className="mt-32">
+        <div style={{marginTop:'175px'}}>
           <video className="video-fluid z-depth-1 w-full -px-12" autoPlay loop muted>
-            <source src="https://res.cloudinary.com/db5gm6hgs/video/upload/v1624565774/videos%20home/20210624_1713192_s9dshd.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/robles-identity/video/upload/v1629178457/20210817_0230491_ycwknn.mp4" type="video/mp4" />
           </video>
         </div>
 
-        {/* <!-- Grid row --> */}
+        {/* <!-- Grid row DESKTOP --> */}
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+            </div>
+            <div class="col-sm">
+              <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+            </div>
+            <div class="col-sm">
+              <img className="card-img-top" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624047762/img2_sdvf95.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        {/* <!-- Grid End DESKTOP --> */}
+
+        {/* <!-- Grid row MOBILE --> */}
         <div className="container">
           <div className="row">
             <div className="col-md-12 pt-10 col-center m-auto">
