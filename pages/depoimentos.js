@@ -10,7 +10,7 @@ const Depoimentos = () => {
             </Head>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-8 pt-10 col-center m-auto">
+                    <div className="col-md-6 pt-10 col-center m-auto">
                         <div className="depoimento">
                             <h2>Depoimentos</h2>
                         </div>

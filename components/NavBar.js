@@ -147,7 +147,7 @@ function NavBar() {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link href="https://app.linktree.com.br/lucakes">
+                                <Link href="/contatos">
                                     <a className="nav-link">Contatos</a>
                                 </Link>
                             </li>

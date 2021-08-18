@@ -1,17 +1,17 @@
 import React from "react";
-// import emailjs from "emailjs-com";
+import emailjs from "emailjs-com";
 
-// function sendEmail(e) {
-//   e.preventDefault();
+function sendEmailContato(e) {
+  e.preventDefault();
 
-//   emailjs.sendForm('default_service', 'template_h85wzix', e.target, 'user_0eDmuHI0mHtyFtGplyTGo')
-//     .then((result) => {
-//       alert("E-mail enviado com sucesso");
-//     }, (error) => {
-//       alert("Ocorreu um erro inesperado, verifique os dados e tente novamente!");
-//     });
-//   e.target.reset()
-// }
+  emailjs.sendForm('default_service', 'template_h85wzix', e.target, 'user_0eDmuHI0mHtyFtGplyTGo')
+    .then((result) => {
+      alert("E-mail enviado com sucesso");
+    }, (error) => {
+      alert("Ocorreu um erro inesperado, verifique os dados e tente novamente!");
+    });
+  e.target.reset()
+}
 
 export default function Footer() {
   return (
@@ -53,8 +53,7 @@ export default function Footer() {
           <div className="right box">
             <h1>Fale conosco</h1>
             <div className="content">
-              {/* <form onSubmit={sendEmail}> */}
-              <form>
+              <form onSubmit={sendEmailContato}>
                 <div className="name">
                   <div className="text">Nome completo *</div>
                   <input type='nome' name="from_name" id="from_name" required />
