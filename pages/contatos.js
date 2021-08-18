@@ -5,7 +5,7 @@ import emailjs from "emailjs-com";
 function sendEmailContato(e) {
     e.preventDefault();
 
-    emailjs.sendForm('default_service', 'template_h85wzix', e.target, 'user_0eDmuHI0mHtyFtGplyTGo')
+    emailjs.sendForm('default_service', 'template_pv29dmi', e.target, 'user_Y7iLs3gquze1t836pZg9J')
         .then((result) => {
             alert("E-mail enviado com sucesso");
         }, (error) => {
