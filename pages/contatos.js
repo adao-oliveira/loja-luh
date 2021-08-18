@@ -1,5 +1,6 @@
 import React from "react";
-import Head from 'next/head'
+import Head from 'next/head';
+import emailjs from "emailjs-com";
 
 function sendEmailContato(e) {
     e.preventDefault();
