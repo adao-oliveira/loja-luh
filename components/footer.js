@@ -22,9 +22,8 @@ export default function Footer() {
       <footer>
         <div className="main-content">
           <div className="left box">
-            <h1>Sobre</h1>
+            <h1>Contatos</h1>
             <div className="content">
-              <p>Apresentação</p>
               <div className="social">
                 <a href="https://www.facebook.com/luciana.valerio.180"><span className="fab fa-facebook-f"></span></a>
                 <a href="https://www.instagram.com/luuh_.miranda/"><span className="fab fa-instagram"></span></a>
