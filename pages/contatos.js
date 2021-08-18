@@ -5,7 +5,7 @@ import emailjs from "emailjs-com";
 function sendEmailContato(e) {
     e.preventDefault();
 
-    emailjs.sendForm('default_service', 'template_ggs0fdp', e.target, 'user_MItfXJG0w5itx4lmcFISX')
+    emailjs.sendForm('default_service', 'template_h85wzix', e.target, 'user_0eDmuHI0mHtyFtGplyTGo')
         .then((result) => {
             alert("E-mail enviado com sucesso");
         }, (error) => {
@@ -31,7 +31,10 @@ const Contato = () => {
                                 <input type='nome' name="from_name" id="from_name" placeholder="Nome completo" required />
                             </div>
                             <div className="input-block">
-                                <textarea type='assunto' className="form-control" rows="6" name="message" id="message" placeholder="Mensagem..." required />
+                                <input type="tell" name="telefone" id="telefone" maxLength="11" onkeypress="mascara(this)" placeholder="Número para contato" required />
+                            </div>
+                            <div className="input-block">
+                                <textarea type='assunto' className="form-control" rows="6" name="mensagem" id="mensagem" placeholder="Mensagem..." required />
                             </div>
                             <button type='submit' className="btn-enviar mt-4">Enviar Avaliação</button>
                         </form>

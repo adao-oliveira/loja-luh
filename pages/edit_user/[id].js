@@ -46,48 +46,38 @@ const EditUser = () => {
                     return dispatch({ type: 'NOTIFY', payload: { success: res.msg } })
                 })
         }
-
     }
 
-
     return (
-        <div className="edit_user my-3 mt-48">
+        <div className="edit_user my-3 pt-16">
             <Head>
-                <title>Editar usuário</title>
+                <title>Habilitar Admin</title>
             </Head>
 
             <div className="col-md-4 mx-auto my-4">
-                <h2 className="text-uppercase text-dark">Editar usuário</h2>
-
+                <h2 className="text-uppercase text-dark mb-4">Habilitar Admin</h2>
                 <div className="form-group">
                     <label htmlFor="name" className="d-block">Nome</label>
                     <input type="text" id="name" defaultValue={editUser.name} disabled />
                 </div>
-
                 <div className="form-group">
                     <label htmlFor="email" className="d-block">E-mail</label>
                     <input type="text" id="email" defaultValue={editUser.email} disabled />
                 </div>
-
                 <div className="form-group">
                     <input type="checkbox" id="isAdmin" checked={checkAdmin}
                         style={{ width: '20px', height: '20px' }} onChange={handleCheck} />
-
                     <label htmlFor="Administrador" style={{ transform: 'translate(4px, -3px)' }}>
                         Administrador
                     </label>
                 </div>
-
-                <div>
-                    <button className="btn btn-danger" onClick={() => router.back()}>
+                <div className="text-center">
+                    <button className="btn btn-danger mr-4" onClick={() => router.back()}>
                         <i className="fas fa-long-arrow-alt-left" aria-hidden></i> Voltar
                     </button>
+                    <button className="btn btn-danger" onClick={handleSubmit}>Atualizar</button>
                 </div>
-
-                <button className="btn btn-danger" onClick={handleSubmit}>Atualizar</button>
-
             </div>
-
         </div>
     )
 }

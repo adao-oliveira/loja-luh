@@ -38,13 +38,14 @@ export default function Footer() {
             <div className="content">
               <ul>
                 <li>
-                  <a href="#bolos">Bolos</a>
+                  <a href="/produtos">Bolos</a>
+                </li>
+                
+                <li>
+                  <a href="/produtos">Salgados</a>
                 </li>
                 <li>
-                  <a href="#salgados">Salgados</a>
-                </li>
-                <li>
-                  <a href="#doces">Doces</a>
+                  <a href="/produtos">Doces</a>
                 </li>
               </ul>
             </div>
