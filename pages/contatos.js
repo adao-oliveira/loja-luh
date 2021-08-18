@@ -31,12 +31,15 @@ const Contato = () => {
                                 <input type='nome' name="from_name" id="from_name" placeholder="Nome completo" required />
                             </div>
                             <div className="input-block">
+                                <input type="email" name="email" id="email" placeholder="Seu melhor e-mail" required />
+                            </div>
+                            <div className="input-block">
                                 <input type="tell" name="telefone" id="telefone" maxLength="11" onkeypress="mascara(this)" placeholder="Número para contato" required />
                             </div>
                             <div className="input-block">
                                 <textarea type='assunto' className="form-control" rows="6" name="mensagem" id="mensagem" placeholder="Mensagem..." required />
                             </div>
-                            <button type='submit' className="btn-enviar mt-4">Enviar Avaliação</button>
+                            <button type='submit' className="btn-enviar mt-4">Enviar</button>
                         </form>
 
                         <h1 className="text-center text-lg leading-relaxed">

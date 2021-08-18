@@ -5,11 +5,11 @@ function sendEmailContato(e) {
   e.preventDefault();
 
   emailjs.sendForm('default_service', 'template_h85wzix', e.target, 'user_0eDmuHI0mHtyFtGplyTGo')
-    .then((result) => {
-      alert("E-mail enviado com sucesso");
-    }, (error) => {
-      alert("Ocorreu um erro inesperado, verifique os dados e tente novamente!");
-    });
+      .then((result) => {
+          alert("E-mail enviado com sucesso");
+      }, (error) => {
+          alert("Ocorreu um erro inesperado, verifique os dados e tente novamente!");
+      });
   e.target.reset()
 }
 
@@ -72,7 +72,7 @@ export default function Footer() {
                   <textarea rows="2" cols="25" type='assunto' name="mensagem" id="mensagem" required></textarea>
                 </div>
                 <div className="btn">
-                  <button type="submit">Enviar</button>
+                  <button type='submit'>Enviar</button>
                 </div>
               </form>
             </div>
@@ -81,6 +81,7 @@ export default function Footer() {
         <div className="copyright">
           <center>
             <span className="credit" style={{ fontSize: '20px' }}><a href="/">Lu Cakes</a></span>
+            <br /><span className="">CARAPICUÍBA/ARISTON</span>
             <br /><i className="far fa-copyright text-danger"></i>
             <span className="text-danger"> {new Date().getFullYear()} Todos os Direitos reservados</span>
           </center>
