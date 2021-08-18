@@ -24,19 +24,13 @@ const Home = () => {
           </video>
         </div>
 
-        {/* <!-- Grid row DESKTOP --> */}
-
-
-        
-        {/* <!-- Grid End DESKTOP --> */}
-
         {/* <!-- Grid row MOBILE --> */}
         <div className="container">
           <div className="row">
             <div className="col-md-6 pt-10 col-center m-auto">
               {/* Bolos */}
               <div className="depoimento">
-                <h2>Bolo</h2>
+                <h2>Bolos</h2>
               </div>
               <div id="myCarousel" className="carousel slide" data-ride="carousel">
                 {/* <!-- Carousel --> */}
