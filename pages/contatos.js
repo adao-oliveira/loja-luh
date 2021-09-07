@@ -71,7 +71,7 @@ const Contato = () => {
     }
     
     h2 {
-      color: #f53625;
+      color: #f33424;
       padding-top: 40px;
       font-size: 30px;
       text-align: center;
@@ -79,7 +79,7 @@ const Contato = () => {
     
     .form-wrapper form {
       margin: 20px 0;
-      background-color: #f53625;
+      background-color: #f33424;
       padding: 30px 25px;
       border-radius: 5px;
     }
@@ -99,8 +99,8 @@ const Contato = () => {
       padding: 7px;
       font-family: 'Courier New', Courier, monospace;
       font-size: 16px;
-      color: #f53625;
-      outline-color: #f53625;
+      color: #f33424;
+      outline-color: #f33424;
       height: 50px;
       border: none;
       border-radius: 5px;
@@ -114,7 +114,7 @@ const Contato = () => {
       margin: 10px auto;
       padding: 20px;
       border-radius: 5px;
-      outline-color: #f53625;
+      outline-color: #f33424;
       background: #fff;
       box-shadow: inset 9px 9px 19px #d9d9d9, inset -9px -9px 19px #fff;
     }

@@ -15,6 +15,8 @@ const Apresentacao = () => {
                             <h2 className="noo-sh-title text-block texto" id="textSlider">
                                 Bem Vindo(a)!
                             </h2>
+                            <img style={{width:'600px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}} src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1630951654/txx8patqnk9kxuakut3a.jpg" />
+
                             <div className="text-lg leading-relaxed mt-5">
                                 <p>
                                     Oi! Meu nome é Luciana. Sou a chef e proprietária da Lu Cakes Confeitaria 😀

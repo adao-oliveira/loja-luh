@@ -55,9 +55,6 @@ const Cart = () => {
   }, [callback])
 
   const handlePayment = async () => {
-    if (!address || !mobile)
-      return dispatch({ type: 'NOTIFY', payload: { error: 'Por favor, adicione seu endereço e celular' } })
-
     let newCart = [];
     for (const item of carrinho) {
       const res = await getData(`product/${item._id}`)
@@ -98,7 +95,7 @@ const Cart = () => {
     return <img className="img-responsive w-100" src="https://res.cloudinary.com/db5gm6hgs/image/upload/v1624114292/cart.png" alt="not empty" />
 
   return (
-    <div className="row mx-auto mt-32" style={{paddingTop:'50px'}}>
+    <div className="row mx-auto mt-32" style={{ paddingTop: '50px' }}>
       <Head>
         <title>Carrinho</title>
       </Head>
@@ -119,21 +116,41 @@ const Cart = () => {
       <div className="col-md-4 my-3 text-center text-uppercase text-dark">
         <h3>Total: <span className="text-danger mb-2">R${total}</span></h3>
 
-
         {/* <Link href={auth.user ? '#!' : '/login'}>
   <a className="btn btn-dark my-2" onClick={handlePayment}>Pagamento</a>
 </Link> */}
         <form>
-          <h2 className="mt-8">Formas de pagamento</h2>
-          <Link href={auth.user ? '#!' : '/login'}>
-            <a className="btn btn-danger my-2 form-control mb-2" onClick={handlePayment}>PIX</a>
-          </Link>
+          <h3 className="mt-8">Pagamento</h3>
 
-          <Link href={auth.user ? '#!' : '/login'}>
-            <a className="btn btn-danger my-2 form-control mb-2" onClick={handlePayment}>BOLETO</a>
-          </Link>
+          {/* <!-- Botão para acionar modal --> */}
+          <button type="button" class="btn" data-toggle="modal" data-target="#modalExemplo">
+            <a  className="btn btn-danger my-2 form-control mb-2" onClick={handlePayment}>PIX</a>
+          </button>
+
+          {/* <!-- Modal --> */}
+          <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">PIX COPIA E COLA</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="well">
+                    <p>
+                      <a href="mailto:email@gmail.com">lucianajb1979@hotmail.com</a>
+                    </p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </form>
-
       </div>
     </div>
   )

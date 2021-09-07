@@ -496,7 +496,7 @@ width: 140px;
 position: absolute;
 margin: 0 auto;
 height: 3px;
-background: #f53625;
+background: #f33424;
 left: 0;
 right: 0;
 bottom: -10px;
@@ -522,11 +522,11 @@ width: 135px;
 height: 135px;
 margin: 0 auto;
 padding: 5px;
-border: 1px solid #f53625;
+border: 1px solid #f33424;
 border-radius: 50%;
 }
 .carousel .img-box img {
-width: 50px;
+width: 100%;
 height: 100%;
 display: block;
 border-radius: 50%;
@@ -539,7 +539,7 @@ font-style: italic;
 }
 .carousel .overview b {
 text-transform: uppercase;
-color: #f53625;
+color: #f33424;
 }
 .carousel .carousel-control {
 width: 10px;
@@ -554,7 +554,7 @@ line-height: 42px;
 position: absolute;
 display: inline-block;
 color: #FFC0CB;
-text-shadow: 0 3px 3px #f53625, 0 0 0 #111;
+text-shadow: 0 3px 3px #f33424, 0 0 0 #111;
 }
 .carousel .carousel-indicators {
 bottom: -40px;
@@ -568,11 +568,11 @@ border-radius: 50%;
 .carousel-indicators li {	
 background: #111;
 border-color: transparent;
-box-shadow: inset 0 2px 1px #f53625;
+box-shadow: inset 0 2px 1px #f33424;
 }
 .carousel-indicators li.active {	
 background: #111;		
-box-shadow: inset 0 2px 1px #f53625;
+box-shadow: inset 0 2px 1px #f33424;
 }
 
 #back-to-top {
@@ -588,4 +588,77 @@ box-shadow: inset 0 2px 1px #f53625;
 #mycarousel .carousel-item .card-body {
   border-color: #FF0040;
   width: 100%;
+}
+
+.mailto-link {
+	position: relative;
+	padding: 8px 0;
+}
+.mailto-message {
+	top: 1px;
+	left: 50%;
+	margin-bottom: -5px;
+	transform: translate(-50%, -100%);
+	position: absolute;
+	display: none;
+	width: auto;
+	white-space: nowrap;
+	font-size: 12px;
+	background-color: black;
+	color: white;
+	padding: 2px 6px;
+	border-radius: 2px;
+	&:after,
+	&:before {
+		content: '';
+	}
+	&:before {
+		top: 100%;
+		left: 50%;
+		border: solid transparent;
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(0, 0, 0, 0);
+		border-top-color: #000000;
+		border-width: 4px;
+		margin-left: -4px;
+	}
+}
+.mailto-link:hover .mailto-message,
+.mailto-link:focus .mailto-message,
+.mailto-link:focus-within .mailto-message {
+	display: block;
+}
+
+body {
+	padding: 3em calc((100% - 75vw) / 2);
+	line-height: 1.5;
+	background-color: papayawhip;
+	text-align: center;
+}
+.well {
+	padding: 3em;
+	background-color: rgba(black, .03);
+	border-radius: 1em;
+	box-shadow: inset 0 2px 4px rgba(black, .05);
+}
+h2 {
+	font-weight: 400;
+	margin-top: 0;
+}
+code {
+	background-color: #e8f0e7;
+	padding: 3px 6px;
+}
+input {
+	padding: .6em 1.2em;
+	border: 0;
+	border-radius: 4px;
+	font-size: 1.3em;
+	text-align: center;
+	&:focus {
+		box-shadow: 0 0 3px 0 #b17b22;
+  }
 }
