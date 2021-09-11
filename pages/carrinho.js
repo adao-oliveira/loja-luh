@@ -124,7 +124,7 @@ const Cart = () => {
 
           {/* <!-- Botão para acionar modal --> */}
           <button type="button" class="btn" data-toggle="modal" data-target="#modalExemplo">
-            <a  className="btn btn-danger my-2 form-control mb-2" onClick={handlePayment}>PIX</a>
+            <a className="btn btn-danger my-2 form-control mb-2" onClick={handlePayment}>PIX</a>
           </button>
 
           {/* <!-- Modal --> */}
@@ -139,9 +139,13 @@ const Cart = () => {
                 </div>
                 <div class="modal-body">
                   <div class="well">
-                    <p>
-                      <a href="mailto:email@gmail.com">lucianajb1979@hotmail.com</a>
-                    </p>
+                    <div>
+                      <p>
+                        <textarea class="js-copytextarea" style={{width:'70%',height:'30px', textAlign:'center', fontSize:'20px', resize:'none'}} value="LUCIANAJB1979@HOTMAIL.COM"></textarea>
+                      </p>
+                      <button class="js-textareacopybtn" style={{backgroundColor:'red', borderRadius:'5px', outline:'none', width:'100px', height:'30px', color:'#fff'}}>Copiar PIX</button>
+                    </div>
+                    <p className="mt-4 text-danger">Atenção: APÓS COPIAR O PIX, REALIZAR O PAGAMENTO ATRAVÉS DO SEU APLICATIVO COM O VALOR TOTAL DE ACORDO COM SEU PEDIDO</p>
                   </div>
                 </div>
                 <div class="modal-footer">

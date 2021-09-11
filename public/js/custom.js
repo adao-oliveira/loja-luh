@@ -1,47 +1,41 @@
 (function ($) {
   "use strict";
 
-  $(document).ready(function() {
-	
-    // Add class to mailto link
-    // Needed to separate the disabling of the default action AND copy email to clipboard
-    $('a[href^=mailto]').addClass('mailto-link');
-  
-    var mailto = $('.mailto-link');
-    var messageCopy = 'Clique para copiar a chave PIX';
-    var messageSuccess = 'Realize o PIX com a chave copiada e em seguida entre em contato através do whatsapp';
-    
-    mailto.append('<span class="mailto-message"></span>');
-    $('.mailto-message').append(messageCopy);
-    
-    // Disable opening your email client. yuk.
-    $('a[href^=mailto]').click(function() {
-      return false; 
-    })
-    
-    // On click, get href and remove 'mailto:' from value
-    // Store email address in a variable.
-    mailto.click(function() {
-      var href = $(this).attr('href');
-      var email = href.replace('mailto:', '');
-      copyToClipboard(email);
-      $('.mailto-message').empty().append(messageSuccess);
-      setTimeout(function() {
-        $('.mailto-message').empty().append(messageCopy);}, 10000); 
+  // COPIAR PIX
+
+  window.onload = function() {
+    // Pega todos os elementos correspondentes
+    var copyTextareaBtn = Array.prototype.slice.
+      call(document.querySelectorAll('.js-textareacopybtn'));
+    var copyTextarea = Array.prototype.slice.
+      call(document.querySelectorAll('.js-copytextarea'));
+ 
+    // Laço para percorrer todos os elementos
+    copyTextareaBtn.forEach(function(btn, idx) {
+ 
+      btn.addEventListener("click", function() {
+ 
+        // Copia o conteudo do textarea
+        copyTextarea[idx].select();
+ 
+          var msg = document.execCommand('copy') 
+            ? 'funcionou' : 'deu erro';
+          console.log('Compando para copiar texto ' + msg);
+ 
+      });
+ 
     });
-    
-  });
-  
-  // Grabbed this from Stack Overflow.
-  // Copies the email variable to clipboard
-  function copyToClipboard(text) {
-      var dummy = document.createElement("input");
-      document.body.appendChild(dummy);
-      dummy.setAttribute('value', text);
-      dummy.select();
-      document.execCommand('copy');
-      document.body.removeChild(dummy);
   }
+
+  const input = document.querySelector("#input");
+
+input.addEventListener("keypress", function(e) {
+
+    if(e.key === ",") {
+      e.preventDefault();
+  }
+  
+});
 
   /* ..............................................
      Fixed Menu
