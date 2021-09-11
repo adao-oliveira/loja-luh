@@ -141,7 +141,7 @@ const Cart = () => {
                   <div class="well">
                     <div>
                       <p>
-                        <textarea class="js-copytextarea" style={{width:'70%',height:'30px', textAlign:'center', fontSize:'20px', resize:'none'}} value="LUCIANAJB1979@HOTMAIL.COM"></textarea>
+                        <textarea class="js-copytextarea" style={{width:'100%',height:'30px', textAlign:'center', fontSize:'17px', resize:'none'}} value="LUCIANAJB1979@HOTMAIL.COM"></textarea>
                       </p>
                       <button class="js-textareacopybtn" style={{backgroundColor:'red', borderRadius:'5px', outline:'none', width:'100px', height:'30px', color:'#fff'}}>Copiar PIX</button>
                     </div>
